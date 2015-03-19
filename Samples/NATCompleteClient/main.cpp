@@ -252,7 +252,7 @@ struct UPNPFramework : public SampleFramework
 				char leaseDuration[128];
 				r = UPNP_GetSpecificPortMappingEntry(urls.controlURL,
 					data.first.servicetype,
-					eport, "UDP",
+					eport, "UDP", NULL,
 					intClient, intPort,
 					desc, enabled, leaseDuration);
 

@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{DDE33A84-42B6-4A85-B204-056C1C50F566}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H. -B. --check-stamp-file E:\02_LIBRARY\RakNet\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/02_LIBRARY/RakNet/CMakeLists.txt;E:\02_LIBRARY\RakNet\CMakeLists.txt;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeSystemSpecificInitialize.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeCCompiler.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCommonLanguageInclude.cmake;E:\02_LIBRARY\RakNet\CmakeIncludes\CmakeMacros.txt;E:\02_LIBRARY\RakNet\CmakeIncludes\FindMacros.txt;E:\02_LIBRARY\RakNet\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\02_LIBRARY\RakNet\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H. -B. --check-stamp-file E:\02_LIBRARY\RakNet\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/02_LIBRARY/RakNet/CMakeLists.txt;E:\02_LIBRARY\RakNet\CMakeLists.txt;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeSystemSpecificInitialize.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeCCompiler.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCommonLanguageInclude.cmake;E:\02_LIBRARY\RakNet\CmakeIncludes\CmakeMacros.txt;E:\02_LIBRARY\RakNet\CmakeIncludes\FindMacros.txt;E:\02_LIBRARY\RakNet\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\02_LIBRARY\RakNet\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H. -B. --check-stamp-file E:\02_LIBRARY\RakNet\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:/02_LIBRARY/RakNet/CMakeLists.txt;E:\02_LIBRARY\RakNet\CMakeLists.txt;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeSystemSpecificInitialize.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeCCompiler.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCommonLanguageInclude.cmake;E:\02_LIBRARY\RakNet\CmakeIncludes\CmakeMacros.txt;E:\02_LIBRARY\RakNet\CmakeIncludes\FindMacros.txt;E:\02_LIBRARY\RakNet\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\02_LIBRARY\RakNet\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H. -B. --check-stamp-file E:\02_LIBRARY\RakNet\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:/02_LIBRARY/RakNet/CMakeLists.txt;E:\02_LIBRARY\RakNet\CMakeLists.txt;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeSystemSpecificInitialize.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeCCompiler.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeCXXCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeGenericSystem.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\WindowsPaths.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC.cmake;E:\02_LIBRARY\RakNet\CMakeFiles\3.2.1\CMakeRCCompiler.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeRCInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCXXInformation.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files (x86)\CMake\share\cmake-3.2\Modules\CMakeCommonLanguageInclude.cmake;E:\02_LIBRARY\RakNet\CmakeIncludes\CmakeMacros.txt;E:\02_LIBRARY\RakNet\CmakeIncludes\FindMacros.txt;E:\02_LIBRARY\RakNet\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\02_LIBRARY\RakNet\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/BigPacketTest/BigPacketTest.vcxproj">
+      <Project>E1126212-2B5C-4B24-9A19-3A9DCA60D4BE</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/BurstTest/BurstTest.vcxproj">
+      <Project>F7EBF182-78C9-4F6C-A7E6-A4D32B4E581E</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Chat Example/ChatClient.vcxproj">
+      <Project>93FCAA26-C6FB-478B-9928-43029B3365F6</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Chat Example/ChatServer.vcxproj">
+      <Project>18145A77-33E6-411E-BD7B-3BBCC30DEEEA</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/CloudClient/CloudClient.vcxproj">
+      <Project>7DD09FF6-51A0-4F15-AD26-49A944ACD800</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/CloudServer/CloudServer.vcxproj">
+      <Project>88A20A24-D217-4B12-B08E-9CE13949C986</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/CloudTest/CloudTest.vcxproj">
+      <Project>2B03B5DE-F588-4F81-A1D5-AE533EAE9789</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/CommandConsoleClient/CommandConsoleClient.vcxproj">
+      <Project>0F5CB79B-34BB-433F-8765-D42F4DFA9956</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/CommandConsoleServer/CommandConsoleServer.vcxproj">
+      <Project>16E6F297-E38B-493C-81D2-E32EED7C883F</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/ComprehensivePCGame/ComprehensivePCGame.vcxproj">
+      <Project>7D4E7F13-13EF-4F64-856F-09DC98D3D5A5</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/ComprehensiveTest/ComprehensiveTest.vcxproj">
+      <Project>AEFC8595-57A0-41A2-8747-7EFB99EC5743</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/CrashReporter/CrashReporter.vcxproj">
+      <Project>544D58B9-B2EB-4E3E-8FC1-321D08F30DA5</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/CrossConnectionTest/CrossConnectionTest.vcxproj">
+      <Project>4143F30B-BA4F-4738-ACA4-A353B1FEA26E</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/DirectoryDeltaTransfer/DirectoryDeltaTransfer.vcxproj">
+      <Project>E1927309-41A4-4C5B-A8D5-B2E6853525E3</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Dropped Connection Test/DroppedConnectionTest.vcxproj">
+      <Project>1C0B193B-B488-40D7-B63B-D555CDAD0930</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Encryption/Encryption.vcxproj">
+      <Project>B39B68B8-C0DE-4351-8ED6-D27CEEF319D6</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/FCMHost/FCMHost.vcxproj">
+      <Project>F59162C9-9972-42B7-BC6B-618E07E491CD</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/FCMHostSimultaneous/FCMHostSimultaneous.vcxproj">
+      <Project>D1ADC4F7-876D-4BDE-9B4F-2C1DBCF2E74C</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/FCMVerifiedJoinSimultaneous/FCMVerifiedJoinSimultaneous.vcxproj">
+      <Project>FAA80771-CEDF-4EAC-875D-412B21E077E8</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/FileListTransfer/FileListTransfer.vcxproj">
+      <Project>8504ECF3-B261-42AD-8DDB-03AEEE90D4B9</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Flow Control Test/FlowControlTest.vcxproj">
+      <Project>83244750-B480-4C73-A36D-9A17D303A729</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/FullyConnectedMesh/FullyConnectedMesh.vcxproj">
+      <Project>12947249-A9C8-483A-BAF2-035C6DA5CA66</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/LANServerDiscovery/LANServerDiscovery.vcxproj">
+      <Project>AB3B8089-0512-40DD-8EBC-0215CD87C0B2</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Lobby2Client/Lobby2Client.vcxproj">
+      <Project>D24A1F73-E96F-4082-8ED4-EC36327A9402</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/MessageFilter/MessageFilter.vcxproj">
+      <Project>173BF873-AF17-4588-9086-EB77326BD0E7</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/MessageSizeTest.vcxproj">
+      <Project>3C06887A-C228-445A-87E0-4E12617B81CF</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/NATCompleteClient/NATCompleteClient.vcxproj">
+      <Project>ECA1BBDD-7C8A-4EBA-87FD-D31C9449E7FB</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/NATCompleteServer/NATCompleteServer.vcxproj">
+      <Project>CF6262D1-86A2-4E68-9234-5B98501C88F4</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/OfflineMessagesTest/OfflineMessagesTest.vcxproj">
+      <Project>DB270664-1C45-4038-8EB1-9FC3F936483B</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/PHPDirectoryServer2/PHPDirectoryServer2.vcxproj">
+      <Project>07DD8693-0A99-4C02-9D55-12216CC927C4</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/PacketLogger/PacketLogger.vcxproj">
+      <Project>9083FA53-D497-4358-B5DF-23719D66B7CB</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Ping/Ping.vcxproj">
+      <Project>816D159C-09FB-4658-A472-142CBE9B372C</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/RPC3/RPC3.vcxproj">
+      <Project>5BE90004-D6AF-4195-9F0A-EAEB32DB1373</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/RPC4/RPC4.vcxproj">
+      <Project>CEE186B5-D3E7-46AA-8E78-6C68E16BA38B</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/RackspaceConsole/RackspaceConsole.vcxproj">
+      <Project>3F661D96-C161-4017-B9C3-AB5F9BA32709</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Lib/DLL/RakNetDLL.vcxproj">
+      <Project>FB02F8C5-3201-43FF-A103-2E45B46E8129</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Lib/LibStatic/RakNetLibStatic.vcxproj">
+      <Project>D7502504-2043-4DD1-A98D-FE6D92B98D5E</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/RakVoice/RakVoice.vcxproj">
+      <Project>C678694C-D3D9-4695-9C6C-28DD1377A42C</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Reliable Ordered Test/ReliableOrderedTest.vcxproj">
+      <Project>8184F3C5-1FBB-4234-AD10-12852751F20D</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/ReplicaManager3/ReplicaManager3.vcxproj">
+      <Project>81E800BE-5770-4484-9F8F-6627140FE5BD</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Router2/Router2.vcxproj">
+      <Project>724390D3-F44A-4367-8EE2-42F3B30D8563</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/SendEmail/SendEmail.vcxproj">
+      <Project>DD1995F1-0E56-4884-86D7-9A9A24C5E084</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/ServerClientTest2/ServerClientTest2.vcxproj">
+      <Project>8B46A411-AB91-47BC-A3C5-85A356DA7FAE</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/StatisticsHistoryTest/StatisticsHistoryTest.vcxproj">
+      <Project>8F244764-2A0A-425D-BB32-B91FA224D5CF</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/TeamManager/TeamManager.vcxproj">
+      <Project>76332FD0-FD5B-450F-A781-1286885FF464</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/TestDLL/TestDLL.vcxproj">
+      <Project>33A3B357-48E4-4367-BA41-6C6C86B912BC</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Tests/Tests.vcxproj">
+      <Project>E35C3CF9-972E-4C2D-96E9-9390A53B1636</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/ThreadTest/ThreadTest.vcxproj">
+      <Project>EA0A5065-F02E-4610-B4EC-28C8DBCA44D2</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/Timestamping/Timestamping.vcxproj">
+      <Project>75F8F0D1-0508-4F4A-9682-735F5828B644</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/TitleValidationDB_PostgreSQL/TitleValidationDB_PostgreSQL.vcxproj">
+      <Project>BF9611D1-F416-4019-9EB9-CD6A3934F44B</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/TwoWayAuthentication/TwoWayAuthentication.vcxproj">
+      <Project>A6E788E9-1168-4395-9DA9-C51F85B1F7BC</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/UDPForwarder/UDPForwarder.vcxproj">
+      <Project>0AAED8D3-9B57-4109-8443-6FB7BD482537</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/ZERO_CHECK.vcxproj">
+      <Project>8D254353-29AB-45F5-A99E-291A95CD9455</Project>
+    </ProjectReference>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/upnpc-static.vcxproj">
+      <Project>137EFA92-E3AC-443F-A2DB-5C927F267AB4</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -19,11 +19,22 @@ IF(WIN32 AND NOT UNIX)
 
 		IF( MSVC10 OR MSVC11 OR MSVC12 )
 			set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:\"LIBCD.lib LIBCMTD.lib MSVCRT.lib\"" )
+			set_target_properties(RakNetLibStatic PROPERTIES DEBUG_POSTFIX d)
 		ELSE()
 			set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:&quot;LIBCD.lib LIBCMTD.lib MSVCRT.lib&quot;" )
 		ENDIF()
 				
 	ENDIF(NOT ${CMAKE_GENERATOR} STREQUAL "MSYS Makefiles")
+	
+	install (TARGETS RakNetLibStatic
+	RUNTIME DESTINATION bin
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION lib
+	)
+	install (FILES
+	${ALL_HEADER_SRCS}
+	DESTINATION include/raknet
+	)
 
 ELSE(WIN32 AND NOT UNIX)
 	target_link_libraries (RakNetLibStatic ${RAKNET_LIBRARY_LIBS})

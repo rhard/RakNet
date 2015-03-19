@@ -8,11 +8,10 @@ option( RAKNET_EXTENSION_USESPEEX				"Enable extensions using Speex" 		TRUE )
 option( RAKNET_EXTENSION_USEIRRLICHT			"Enable extensions using Irrlicht" 		TRUE )
 option( RAKNET_EXTENSION_USEIRRKLANG			"Enable extensions using Irkklang" 		TRUE )
 option( RAKNET_EXTENSION_USEOGRE3D				"Enable extensions using Ogre3D" 		TRUE )
-
+option( RAKNET_EXTENSION_USEMINIUPNP			"Enable extensions using miniupnp" 		TRUE )
 option( RAKNET_EXTENSION_Autopatcher			"Enable Autopatcher extension" 			TRUE )
 
 
-add_subdirectory("bzip2-1.0.6")
 add_subdirectory("XML")
 
 if( RAKNET_ENABLE_EXTENSIONS )
@@ -62,6 +61,10 @@ if( RAKNET_ENABLE_EXTENSIONS )
 
 	IF( RAKNET_EXTENSION_USEOGRE3D ) 
 		add_subdirectory(Ogre3DInterpDemo)
+	ENDIF()
+	
+	IF( RAKNET_EXTENSION_USEMINIUPNP ) 
+		add_subdirectory(miniupnpc-1.9.20150206)
 	ENDIF()
 
 endif()
