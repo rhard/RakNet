@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\03_LIBS\RakNet\Samples\Lobby2Client\Lobby2ClientSample.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Presence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2ResultCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Message.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Presence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2ResultCode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\03_LIBS\RakNet\DependentExtensions\Lobby2\Lobby2Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\03_LIBS\RakNet\Samples\Lobby2Client\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3F07F9D4-1481-4686-BFDB-5A2FEAC0B9DA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{28BDF0AB-6D0D-41DD-8530-B245D4F2150B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{8436625C-E6B3-4DD8-93CB-9761E90622A1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

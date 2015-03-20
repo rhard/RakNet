@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{75855468-D147-43D9-AE13-D1CE5F842375}</ProjectGUID>
+    <ProjectGUID>{67C566EB-EECC-4EF9-B38F-8B7B33980733}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>AutoPatcherServer_MySQL</ProjectName>
@@ -58,25 +58,25 @@
   <PropertyGroup Label="UserMacros" />
     <PropertyGroup>
       <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\Debug\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\Debug\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AutoPatcherServer_MySQL.dir\Debug\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AutoPatcherServer_MySQL</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\Release\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\Release\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AutoPatcherServer_MySQL.dir\Release\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AutoPatcherServer_MySQL</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\MinSizeRel\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\MinSizeRel\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">AutoPatcherServer_MySQL.dir\MinSizeRel\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">AutoPatcherServer_MySQL</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\RelWithDebInfo\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\RelWithDebInfo\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">AutoPatcherServer_MySQL.dir\RelWithDebInfo\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">AutoPatcherServer_MySQL</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,7 +86,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalOptions> -w %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -103,10 +103,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -115,12 +115,12 @@
     </Midl>
     <Link>
       <AdditionalOptions> /debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\Lib\LibStatic\Debug\RakNetLibStatic.lib;AutoPatcherMySQLRepository.lib;ws2_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\Lib\LibStatic\Debug\RakNetLibStaticd.lib;AutoPatcherMySQLRepository.lib;ws2_32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/Debug/AutoPatcherServer_MySQL.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/Debug/AutoPatcherServer_MySQL.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/Debug/AutoPatcherServer_MySQL.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/Debug/AutoPatcherServer_MySQL.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -131,7 +131,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalOptions> -w %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -147,10 +147,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -162,8 +162,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/Release/AutoPatcherServer_MySQL.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/Release/AutoPatcherServer_MySQL.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/Release/AutoPatcherServer_MySQL.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/Release/AutoPatcherServer_MySQL.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -174,7 +174,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
       <AdditionalOptions> -w %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -190,10 +190,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -205,8 +205,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/MinSizeRel/AutoPatcherServer_MySQL.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/MinSizeRel/AutoPatcherServer_MySQL.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/MinSizeRel/AutoPatcherServer_MySQL.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/MinSizeRel/AutoPatcherServer_MySQL.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -217,7 +217,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
       <AdditionalOptions> -w %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -233,10 +233,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\.;E:\02_LIBRARY\RakNet\DependentExtensions\MySQLInterface;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\.;D:\03_LIBS\RakNet\DependentExtensions\MySQLInterface;D:\03_LIBS\RakNet\DependentExtensions\Autopatcher;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -249,8 +249,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/RelWithDebInfo/AutoPatcherServer_MySQL.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/RelWithDebInfo/AutoPatcherServer_MySQL.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/RelWithDebInfo/AutoPatcherServer_MySQL.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/RelWithDebInfo/AutoPatcherServer_MySQL.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -259,10 +259,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt</Message>
+    <CustomBuild Include="D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -270,12 +270,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -283,12 +283,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -296,12 +296,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -309,25 +309,25 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:/02_LIBRARY/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/03_LIBS/RakNet/Samples/AutoPatcherServer_MySQL/CMakeLists.txt;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\DependentExtensions\Autopatcher\AutopatcherServer.h" />
-    <ClCompile Include="AutopatcherServerTest_MySQL.cpp"  />
-    <ClCompile Include="..\..\DependentExtensions\Autopatcher\AutopatcherServer.cpp"  />
-    <ClCompile Include="..\..\DependentExtensions\Autopatcher\MemoryCompressor.cpp"  />
-    <ClCompile Include="..\..\DependentExtensions\Autopatcher\CreatePatch.cpp"  />
-    <None Include="readme.txt" />
+    <ClInclude Include="D:\03_LIBS\RakNet\DependentExtensions\Autopatcher\AutopatcherServer.h" />
+    <ClCompile Include="D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\AutopatcherServerTest_MySQL.cpp"  />
+    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Autopatcher\AutopatcherServer.cpp"  />
+    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Autopatcher\MemoryCompressor.cpp"  />
+    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Autopatcher\CreatePatch.cpp"  />
+    <None Include="D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="E:/02_LIBRARY/RakNet/Lib/LibStatic/RakNetLibStatic.vcxproj">
-      <Project>D7502504-2043-4DD1-A98D-FE6D92B98D5E</Project>
+    <ProjectReference Include="D:/03_LIBS/RakNet/Lib/LibStatic/RakNetLibStatic.vcxproj">
+      <Project>60F36FF3-31DD-4A22-BE5F-B0B092E84FA2</Project>
     </ProjectReference>
-    <ProjectReference Include="E:/02_LIBRARY/RakNet/ZERO_CHECK.vcxproj">
-      <Project>8D254353-29AB-45F5-A99E-291A95CD9455</Project>
+    <ProjectReference Include="D:/03_LIBS/RakNet/ZERO_CHECK.vcxproj">
+      <Project>D18CCEF1-FFA1-42BB-9229-E670CE5BAEA6</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

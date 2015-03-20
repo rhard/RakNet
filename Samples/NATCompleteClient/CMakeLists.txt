@@ -10,7 +10,8 @@ STANDARDSUBPROJECTWITHOPTIONSSET(${current_folder})
 add_library(UPNP_LIB STATIC IMPORTED)
  set_property(TARGET UPNP_LIB PROPERTY IMPORTED_LOCATION_RELEASE ${RakNet_SOURCE_DIR}/DependentExtensions/miniupnpc-1.9.20150206/Release/miniupnpc.lib)
  set_property(TARGET UPNP_LIB PROPERTY IMPORTED_LOCATION_DEBUG   ${RakNet_SOURCE_DIR}/DependentExtensions/miniupnpc-1.9.20150206/Debug/miniupnpcd.lib)
-target_link_libraries(${current_folder} UPNP_LIB)
+target_link_libraries(${current_folder} UPNP_LIB iphlpapi.lib)
+add_definitions(-DMINIUPNP_STATICLIB)
 VSUBFOLDER(${current_folder} "Samples/NAT Punchthrough")
 
 
