@@ -1,36 +1,36 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\AutopatcherServerTest_MySQL.cpp">
+    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\AutopatcherServerTest_MySQL.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Autopatcher\AutopatcherServer.cpp">
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\AutopatcherServer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Autopatcher\MemoryCompressor.cpp">
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\MemoryCompressor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\Autopatcher\CreatePatch.cpp">
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\CreatePatch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\03_LIBS\RakNet\DependentExtensions\Autopatcher\AutopatcherServer.h">
+    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\AutopatcherServer.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt" />
+    <CustomBuild Include="E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\03_LIBS\RakNet\Samples\AutoPatcherServer_MySQL\readme.txt" />
+    <None Include="E:\02_LIBRARY\RakNet\Samples\AutoPatcherServer_MySQL\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{3F07F9D4-1481-4686-BFDB-5A2FEAC0B9DA}</UniqueIdentifier>
+      <UniqueIdentifier>{E73BF762-91CF-4CF0-B1D9-26FE23888D7D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Main">
-      <UniqueIdentifier>{8436625C-E6B3-4DD8-93CB-9761E90622A1}</UniqueIdentifier>
+      <UniqueIdentifier>{91BBAC46-58E8-4617-A3C9-AD08F83893B7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

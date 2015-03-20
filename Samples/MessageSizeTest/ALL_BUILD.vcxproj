@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{D2D2217E-2A34-411A-B4A5-6292A4815129}</ProjectGUID>
+    <ProjectGUID>{9663AC10-6391-435E-9262-004F0D556C90}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>ALL_BUILD</ProjectName>
@@ -65,7 +65,7 @@
     </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\MessageSizeTest\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -75,7 +75,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\MessageSizeTest\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -85,7 +85,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\MessageSizeTest\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -95,7 +95,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet\Source;D:\03_LIBS\RakNet\Samples\MessageSizeTest\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -104,10 +104,10 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/03_LIBS/RakNet/Samples/MessageSizeTest/CMakeLists.txt</Message>
+    <CustomBuild Include="E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -115,12 +115,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/03_LIBS/RakNet/Samples/MessageSizeTest/CMakeLists.txt;D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeLists.txt;D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/03_LIBS/RakNet/Samples/MessageSizeTest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -128,12 +128,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/03_LIBS/RakNet/Samples/MessageSizeTest/CMakeLists.txt;D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeLists.txt;D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/03_LIBS/RakNet/Samples/MessageSizeTest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -141,12 +141,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/03_LIBS/RakNet/Samples/MessageSizeTest/CMakeLists.txt;D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeLists.txt;D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/03_LIBS/RakNet/Samples/MessageSizeTest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -154,16 +154,16 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/03_LIBS/RakNet/Samples/MessageSizeTest/CMakeLists.txt;D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeLists.txt;D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\03_LIBS\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\02_LIBRARY\RakNet\Samples\MessageSizeTest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:/03_LIBS/RakNet/Samples/MessageSizeTest/MessageSizeTest.vcxproj">
-      <Project>6379E89C-EE0D-4180-91A7-D6F0841E8EBC</Project>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/MessageSizeTest/MessageSizeTest.vcxproj">
+      <Project>9BA7E307-8FCD-4A8D-B5BC-E9F46390633C</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

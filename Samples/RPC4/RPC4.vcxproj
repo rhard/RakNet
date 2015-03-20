@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{CEE186B5-D3E7-46AA-8E78-6C68E16BA38B}</ProjectGUID>
+    <ProjectGUID>{6072C47F-8AD3-474A-B237-6C9A17E1978F}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>RPC4</ProjectName>
@@ -259,10 +259,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="CMakeLists.txt">
+    <CustomBuild Include="E:\02_LIBRARY\RakNet\Samples\RPC4\CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/RPC4/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RPC4\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RPC4\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -275,7 +275,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/RPC4/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RPC4\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RPC4\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -288,7 +288,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/RPC4/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RPC4\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RPC4\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -301,7 +301,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/RPC4/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RPC4\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RPC4\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -315,15 +315,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RPC4Sample.cpp"  />
-    <None Include="readme.txt" />
+    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\RPC4\RPC4Sample.cpp"  />
+    <None Include="E:\02_LIBRARY\RakNet\Samples\RPC4\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:/02_LIBRARY/RakNet/Lib/LibStatic/RakNetLibStatic.vcxproj">
-      <Project>D7502504-2043-4DD1-A98D-FE6D92B98D5E</Project>
+      <Project>CA70FC98-F119-4AB0-9DDD-A99259E1D31A</Project>
     </ProjectReference>
     <ProjectReference Include="E:/02_LIBRARY/RakNet/ZERO_CHECK.vcxproj">
-      <Project>8D254353-29AB-45F5-A99E-291A95CD9455</Project>
+      <Project>77A30C53-87EB-41C6-8215-B9A647B9C655</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

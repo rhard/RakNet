@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{DE070CF2-9507-49C7-AB37-EDBAAAB2D4C4}</ProjectGUID>
+    <ProjectGUID>{87C9618F-77D4-4A74-BE05-3A47CE282030}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>INSTALL</ProjectName>
@@ -152,7 +152,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="..\..\CMakeFiles\4addeb44008a1a65c47ec014033ada22\INSTALL_force.rule">
+    <CustomBuild Include="E:\02_LIBRARY\RakNet\CMakeFiles\4addeb44008a1a65c47ec014033ada22\INSTALL_force.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 cd .
@@ -209,7 +209,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:/02_LIBRARY/RakNet/Samples/AutopatcherClientRestarter/ALL_BUILD.vcxproj">
-      <Project>DDE33A84-42B6-4A85-B204-056C1C50F566</Project>
+      <Project>9663AC10-6391-435E-9262-004F0D556C90</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

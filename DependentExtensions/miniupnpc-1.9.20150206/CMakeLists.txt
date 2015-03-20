@@ -161,7 +161,7 @@ install (TARGETS ${UPNPC_INSTALL_TARGETS}
   ARCHIVE DESTINATION lib${LIB_SUFFIX}
 )
 install (FILES
-	miniupnpc.h
+  miniupnpc.h
   miniwget.h
   upnpcommands.h
   igd_desc_parse.h

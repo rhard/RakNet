@@ -20,6 +20,7 @@ else(POSTGRESQL_INCLUDE_DIR AND POSTGRESQL_LIBRARIES)
       /usr/local/include/pgsql
       /usr/include/postgresql
       $ENV{ProgramFiles}/PostgreSQL/*/include
+	  $ENV{ProgramW6432}/PostgreSQL/*/include
 	${PROGRAMFILESX86}/PostgreSQL/*/include
       $ENV{SystemDrive}/PostgreSQL/*/include
 	${CUSTOMPROGRAMFILES}/PostgreSQL/*/include
@@ -35,6 +36,7 @@ else(POSTGRESQL_INCLUDE_DIR AND POSTGRESQL_LIBRARIES)
       $ENV{SystemDrive}/PostgreSQL/*/lib/ms
 	${CUSTOMPROGRAMFILES}/PostgreSQL/*/lib/ms
 	$ENV{ProgramFiles}/PostgreSQL/*/lib
+	$ENV{ProgramW6432}/PostgreSQL/*/lib
 	${PROGRAMFILESX86}/PostgreSQL/*/lib
       $ENV{SystemDrive}/PostgreSQL/*/lib
       ${CUSTOMPROGRAMFILES}/PostgreSQL/*/lib

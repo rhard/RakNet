@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{6ACF855D-D1F0-43CB-8189-E1916DB7BC13}</ProjectGUID>
+    <ProjectGUID>{F827A61D-4F97-444E-B027-8FDB0A53F7B5}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>upnpc-shared</ProjectName>
@@ -58,25 +58,25 @@
   <PropertyGroup Label="UserMacros" />
     <PropertyGroup>
       <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\Debug\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\Debug\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">upnpc-shared.dir\Debug\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">miniupnpc</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\Release\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\Release\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">upnpc-shared.dir\Release\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">miniupnpc</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\MinSizeRel\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\MinSizeRel\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">upnpc-shared.dir\MinSizeRel\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">miniupnpc</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\RelWithDebInfo\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\RelWithDebInfo\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">upnpc-shared.dir\RelWithDebInfo\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">miniupnpc</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
@@ -85,7 +85,7 @@
     </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsC</CompileAs>
@@ -102,10 +102,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"Debug\";upnpc_shared_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -118,8 +118,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/Debug/miniupnpc.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/Debug/miniupnpc.pdb</ProgramDataBaseFile>
+      <ImportLibrary>E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/Debug/miniupnpc.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/Debug/miniupnpc.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -129,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsC</CompileAs>
       <ExceptionHandling>
@@ -145,10 +145,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"Release\";upnpc_shared_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -160,8 +160,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/Release/miniupnpc.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/Release/miniupnpc.pdb</ProgramDataBaseFile>
+      <ImportLibrary>E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/Release/miniupnpc.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/Release/miniupnpc.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -171,7 +171,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsC</CompileAs>
       <ExceptionHandling>
@@ -187,10 +187,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"MinSizeRel\";upnpc_shared_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -202,8 +202,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/MinSizeRel/miniupnpc.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/MinSizeRel/miniupnpc.pdb</ProgramDataBaseFile>
+      <ImportLibrary>E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/MinSizeRel/miniupnpc.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/MinSizeRel/miniupnpc.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -213,7 +213,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsC</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -229,10 +229,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32_WINNT=0x0501;CMAKE_INTDIR=\"RelWithDebInfo\";upnpc_shared_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\03_LIBS\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -245,8 +245,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/RelWithDebInfo/miniupnpc.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/RelWithDebInfo/miniupnpc.pdb</ProgramDataBaseFile>
+      <ImportLibrary>E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/RelWithDebInfo/miniupnpc.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/RelWithDebInfo/miniupnpc.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -255,10 +255,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt</Message>
+    <CustomBuild Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -266,12 +266,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpcstrings.h.cmake;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpcstrings.h.cmake;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -279,12 +279,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpcstrings.h.cmake;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpcstrings.h.cmake;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -292,12 +292,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpcstrings.h.cmake;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpcstrings.h.cmake;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HD:/03_LIBS/RakNet -BD:/03_LIBS/RakNet --check-stamp-file D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -305,79 +305,79 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/03_LIBS/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpcstrings.h.cmake;D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:/02_LIBRARY/RakNet/DependentExtensions/miniupnpc-1.9.20150206/CMakeLists.txt;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpcstrings.h.cmake;E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\igd_desc_parse.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\igd_desc_parse.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpc.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniupnpc.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\minixml.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\minixml.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\minisoap.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\minisoap.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniwget.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\miniwget.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\upnpc.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\upnpc.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\upnpcommands.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\upnpcommands.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\upnpreplyparse.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\upnpreplyparse.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\upnperrors.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\upnperrors.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\connecthostport.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\connecthostport.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\portlistingparse.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\portlistingparse.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="D:\03_LIBS\RakNet\DependentExtensions\miniupnpc-1.9.20150206\receivedata.c" >
+    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\miniupnpc-1.9.20150206\receivedata.c" >
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MINIUPNP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -385,8 +385,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:/03_LIBS/RakNet/ZERO_CHECK.vcxproj">
-      <Project>D18CCEF1-FFA1-42BB-9229-E670CE5BAEA6</Project>
+    <ProjectReference Include="E:/02_LIBRARY/RakNet/ZERO_CHECK.vcxproj">
+      <Project>77A30C53-87EB-41C6-8215-B9A647B9C655</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
