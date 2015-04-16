@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CDemo.cpp">
+    <ClCompile Include="CDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMainMenu.cpp">
+    <ClCompile Include="CMainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\RakNetStuff.cpp">
+    <ClCompile Include="RakNetStuff.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\PHPDirectoryServer2\PHPDirectoryServer2.cpp">
+    <ClCompile Include="..\..\Samples\PHPDirectoryServer2\PHPDirectoryServer2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CDemo.h">
+    <ClInclude Include="CDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMainMenu.h">
+    <ClInclude Include="CMainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\RakNetStuff.h">
+    <ClInclude Include="RakNetStuff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\resource.h">
+    <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\PHPDirectoryServer2\PHPDirectoryServer2.h">
+    <ClInclude Include="..\..\Samples\PHPDirectoryServer2\PHPDirectoryServer2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeLists.txt" />
+    <CustomBuild Include="CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\readme.txt" />
+    <None Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">

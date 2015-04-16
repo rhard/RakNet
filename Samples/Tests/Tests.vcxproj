@@ -259,10 +259,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\02_LIBRARY\RakNet\Samples\Tests\CMakeLists.txt">
+    <CustomBuild Include="CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/Tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\Tests\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\Tests\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -275,7 +275,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/Tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\Tests\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\Tests\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -288,7 +288,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/Tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\Tests\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\Tests\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -301,7 +301,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/Tests/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\Tests\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\Tests\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -315,62 +315,62 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\CommonFunctions.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\ComprehensiveConvertTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\ConnectWithSocketTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\CrossConnectionConvertTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\DebugTools.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\DroppedConnectionConvertTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\EightPeerTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\IncludeAllTests.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\LocalIsConnectedTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\ManyClientsOneServerBlockingTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\ManyClientsOneServerDeallocateBlockingTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\ManyClientsOneServerDeallocateTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\ManyClientsOneServerNonBlockingTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\MaximumConnectTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\MiscellaneousTestsTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\OfflineMessagesConvertTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\PacketAndLowLevelTestsTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\PacketChangerPlugin.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\PacketDropPlugin.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\PeerConnectDisconnectTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\PeerConnectDisconnectWithCancelPendingTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\PingTestsTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\RakTimer.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\ReliableOrderedConvertedTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\SecurityFunctionsTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\SystemAddressAndGuidTest.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\TestHelpers.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\Tests\TestInterface.h" />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\CommonFunctions.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\ComprehensiveConvertTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\ConnectWithSocketTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\CrossConnectionConvertTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\DebugTools.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\DroppedConnectionConvertTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\EightPeerTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\LocalIsConnectedTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\ManyClientsOneServerBlockingTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\ManyClientsOneServerDeallocateBlockingTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\ManyClientsOneServerDeallocateTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\ManyClientsOneServerNonBlockingTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\MaximumConnectTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\MiscellaneousTestsTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\OfflineMessagesConvertTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\PacketAndLowLevelTestsTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\PacketChangerPlugin.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\PacketDropPlugin.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\PeerConnectDisconnectTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\PeerConnectDisconnectWithCancelPendingTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\PingTestsTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\RakTimer.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\ReliableOrderedConvertedTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\SecurityFunctionsTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\SystemAddressAndGuidTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\TestHelpers.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\TestInterface.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\Tests\Tests.cpp"  />
+    <ClInclude Include="CommonFunctions.h" />
+    <ClInclude Include="ComprehensiveConvertTest.h" />
+    <ClInclude Include="ConnectWithSocketTest.h" />
+    <ClInclude Include="CrossConnectionConvertTest.h" />
+    <ClInclude Include="DebugTools.h" />
+    <ClInclude Include="DroppedConnectionConvertTest.h" />
+    <ClInclude Include="EightPeerTest.h" />
+    <ClInclude Include="IncludeAllTests.h" />
+    <ClInclude Include="LocalIsConnectedTest.h" />
+    <ClInclude Include="ManyClientsOneServerBlockingTest.h" />
+    <ClInclude Include="ManyClientsOneServerDeallocateBlockingTest.h" />
+    <ClInclude Include="ManyClientsOneServerDeallocateTest.h" />
+    <ClInclude Include="ManyClientsOneServerNonBlockingTest.h" />
+    <ClInclude Include="MaximumConnectTest.h" />
+    <ClInclude Include="MiscellaneousTestsTest.h" />
+    <ClInclude Include="OfflineMessagesConvertTest.h" />
+    <ClInclude Include="PacketAndLowLevelTestsTest.h" />
+    <ClInclude Include="PacketChangerPlugin.h" />
+    <ClInclude Include="PacketDropPlugin.h" />
+    <ClInclude Include="PeerConnectDisconnectTest.h" />
+    <ClInclude Include="PeerConnectDisconnectWithCancelPendingTest.h" />
+    <ClInclude Include="PingTestsTest.h" />
+    <ClInclude Include="RakTimer.h" />
+    <ClInclude Include="ReliableOrderedConvertedTest.h" />
+    <ClInclude Include="SecurityFunctionsTest.h" />
+    <ClInclude Include="SystemAddressAndGuidTest.h" />
+    <ClInclude Include="TestHelpers.h" />
+    <ClInclude Include="TestInterface.h" />
+    <ClCompile Include="CommonFunctions.cpp"  />
+    <ClCompile Include="ComprehensiveConvertTest.cpp"  />
+    <ClCompile Include="ConnectWithSocketTest.cpp"  />
+    <ClCompile Include="CrossConnectionConvertTest.cpp"  />
+    <ClCompile Include="DebugTools.cpp"  />
+    <ClCompile Include="DroppedConnectionConvertTest.cpp"  />
+    <ClCompile Include="EightPeerTest.cpp"  />
+    <ClCompile Include="LocalIsConnectedTest.cpp"  />
+    <ClCompile Include="ManyClientsOneServerBlockingTest.cpp"  />
+    <ClCompile Include="ManyClientsOneServerDeallocateBlockingTest.cpp"  />
+    <ClCompile Include="ManyClientsOneServerDeallocateTest.cpp"  />
+    <ClCompile Include="ManyClientsOneServerNonBlockingTest.cpp"  />
+    <ClCompile Include="MaximumConnectTest.cpp"  />
+    <ClCompile Include="MiscellaneousTestsTest.cpp"  />
+    <ClCompile Include="OfflineMessagesConvertTest.cpp"  />
+    <ClCompile Include="PacketAndLowLevelTestsTest.cpp"  />
+    <ClCompile Include="PacketChangerPlugin.cpp"  />
+    <ClCompile Include="PacketDropPlugin.cpp"  />
+    <ClCompile Include="PeerConnectDisconnectTest.cpp"  />
+    <ClCompile Include="PeerConnectDisconnectWithCancelPendingTest.cpp"  />
+    <ClCompile Include="PingTestsTest.cpp"  />
+    <ClCompile Include="RakTimer.cpp"  />
+    <ClCompile Include="ReliableOrderedConvertedTest.cpp"  />
+    <ClCompile Include="SecurityFunctionsTest.cpp"  />
+    <ClCompile Include="SystemAddressAndGuidTest.cpp"  />
+    <ClCompile Include="TestHelpers.cpp"  />
+    <ClCompile Include="TestInterface.cpp"  />
+    <ClCompile Include="Tests.cpp"  />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:/02_LIBRARY/RakNet/Lib/LibStatic/RakNetLibStatic.vcxproj">

@@ -152,7 +152,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\02_LIBRARY\RakNet\CMakeFiles\5980901d116a4d030f46072cefdec7a0\INSTALL_force.rule">
+    <CustomBuild Include="..\..\CMakeFiles\5980901d116a4d030f46072cefdec7a0\INSTALL_force.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 cd .

@@ -259,10 +259,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeLists.txt">
+    <CustomBuild Include="CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -275,7 +275,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -288,7 +288,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -301,7 +301,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -315,78 +315,78 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\ApplyPatch.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\AutopatcherClient.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\CreatePatch.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\bzlib.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\bzlib_private.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\MemoryCompressor.h" />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\AutopatcherClientTest.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\ApplyPatch.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\AutopatcherClient.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\CreatePatch.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\blocksort.c" >
+    <ClInclude Include="..\..\DependentExtensions\Autopatcher\ApplyPatch.h" />
+    <ClInclude Include="..\..\DependentExtensions\Autopatcher\AutopatcherClient.h" />
+    <ClInclude Include="..\..\DependentExtensions\Autopatcher\CreatePatch.h" />
+    <ClInclude Include="..\..\DependentExtensions\bzip2-1.0.6\bzlib.h" />
+    <ClInclude Include="..\..\DependentExtensions\bzip2-1.0.6\bzlib_private.h" />
+    <ClInclude Include="..\..\DependentExtensions\Autopatcher\MemoryCompressor.h" />
+    <ClCompile Include="AutopatcherClientTest.cpp"  />
+    <ClCompile Include="..\..\DependentExtensions\Autopatcher\ApplyPatch.cpp"  />
+    <ClCompile Include="..\..\DependentExtensions\Autopatcher\AutopatcherClient.cpp"  />
+    <ClCompile Include="..\..\DependentExtensions\Autopatcher\CreatePatch.cpp"  />
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\blocksort.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\bzip2.c" >
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\bzip2.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\bzlib.c" >
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\bzlib.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\compress.c" >
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\compress.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\crctable.c" >
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\crctable.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\decompress.c" >
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\decompress.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\huffman.c" >
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\huffman.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\randtable.c" >
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\randtable.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\spewG.c" >
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\spewG.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6\unzcrash.c" >
+    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\unzcrash.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher\MemoryCompressor.cpp"  />
-    <None Include="E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\readme.txt" />
+    <ClCompile Include="..\..\DependentExtensions\Autopatcher\MemoryCompressor.cpp"  />
+    <None Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:/02_LIBRARY/RakNet/Lib/LibStatic/RakNetLibStatic.vcxproj">

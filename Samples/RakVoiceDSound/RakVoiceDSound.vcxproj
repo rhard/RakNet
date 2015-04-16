@@ -259,10 +259,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\CMakeLists.txt">
+    <CustomBuild Include="CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/RakVoiceDSound/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -275,7 +275,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/RakVoiceDSound/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -288,7 +288,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/RakVoiceDSound/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -301,7 +301,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/RakVoiceDSound/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -315,292 +315,292 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\DSoundVoiceAdapter.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\RakVoice.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\win32\config.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\arch.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\cb_search.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\cb_search_arm4.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\cb_search_bfin.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\cb_search_sse.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\fftwrap.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\filters.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\filters_arm4.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\filters_bfin.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\filters_sse.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\fixed_arm4.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\fixed_arm5e.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\fixed_bfin.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\fixed_debug.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\fixed_generic.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\kiss_fft.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\kiss_fftr.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\lpc.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\lpc_bfin.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\lsp.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\ltp.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\ltp_arm4.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\ltp_bfin.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\ltp_sse.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\math_approx.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\misc.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\misc_bfin.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\modes.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\nb_celp.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\pseudofloat.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\quant_lsp.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\sb_celp.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\smallft.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\stack_alloc.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\vbr.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\vorbis_psy.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\vq.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\vq_arm4.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\vq_bfin.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\vq_sse.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\_kiss_fft_guts.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\pcm_wrapper.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\speex.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\speex_bits.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\speex_callbacks.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\speex_echo.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\speex_header.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\speex_jitter.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\speex_preprocess.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\speex_stereo.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\include\speex\speex_types.h" />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\DSoundVoiceAdapter.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\RakVoiceDSound\main.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\RakVoice.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\bits.c" >
+    <ClInclude Include="DSoundVoiceAdapter.h" />
+    <ClInclude Include="..\..\DependentExtensions\RakVoice.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\win32\config.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\arch.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\cb_search.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\cb_search_arm4.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\cb_search_bfin.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\cb_search_sse.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\fftwrap.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\filters.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\filters_arm4.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\filters_bfin.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\filters_sse.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\fixed_arm4.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\fixed_arm5e.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\fixed_bfin.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\fixed_debug.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\fixed_generic.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\kiss_fft.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\kiss_fftr.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\lpc.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\lpc_bfin.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\lsp.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\ltp.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\ltp_arm4.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\ltp_bfin.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\ltp_sse.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\math_approx.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\misc.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\misc_bfin.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\modes.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\nb_celp.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\pseudofloat.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\quant_lsp.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\sb_celp.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\smallft.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\stack_alloc.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\vbr.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\vorbis_psy.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\vq.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\vq_arm4.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\vq_bfin.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\vq_sse.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\libspeex\_kiss_fft_guts.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\pcm_wrapper.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\speex.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\speex_bits.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\speex_callbacks.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\speex_echo.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\speex_header.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\speex_jitter.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\speex_preprocess.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\speex_stereo.h" />
+    <ClInclude Include="..\..\DependentExtensions\speex-1.1.12\include\speex\speex_types.h" />
+    <ClCompile Include="DSoundVoiceAdapter.cpp"  />
+    <ClCompile Include="main.cpp"  />
+    <ClCompile Include="..\..\DependentExtensions\RakVoice.cpp"  />
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\bits.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\cb_search.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\cb_search.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\exc_10_16_table.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\exc_10_16_table.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\exc_10_32_table.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\exc_10_32_table.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\exc_20_32_table.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\exc_20_32_table.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\exc_5_256_table.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\exc_5_256_table.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\exc_5_64_table.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\exc_5_64_table.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\exc_8_128_table.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\exc_8_128_table.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\fftwrap.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\fftwrap.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\filters.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\filters.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\gain_table.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\gain_table.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\gain_table_lbr.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\gain_table_lbr.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\hexc_10_32_table.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\hexc_10_32_table.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\hexc_table.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\hexc_table.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\high_lsp_tables.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\high_lsp_tables.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\jitter.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\jitter.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\kiss_fft.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\kiss_fft.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\kiss_fftr.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\kiss_fftr.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\lbr_48k_tables.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\lbr_48k_tables.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\lpc.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\lpc.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\lsp.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\lsp.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\lsp_tables_nb.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\lsp_tables_nb.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\ltp.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\ltp.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\math_approx.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\math_approx.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\mdf.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\mdf.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\misc.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\misc.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\modes.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\modes.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\nb_celp.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\nb_celp.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\preprocess.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\preprocess.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\quant_lsp.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\quant_lsp.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\sb_celp.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\sb_celp.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\smallft.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\smallft.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\speex.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\speex.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\speex_callbacks.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\speex_callbacks.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\speex_header.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\speex_header.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\stereo.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\stereo.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\vbr.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\vbr.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\vorbis_psy.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\vorbis_psy.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\speex-1.1.12\libspeex\vq.c" >
+    <ClCompile Include="..\..\DependentExtensions\speex-1.1.12\libspeex\vq.c" >
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>

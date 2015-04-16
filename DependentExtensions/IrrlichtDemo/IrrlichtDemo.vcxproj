@@ -259,10 +259,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeLists.txt">
+    <CustomBuild Include="CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/DependentExtensions/IrrlichtDemo/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -275,7 +275,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/DependentExtensions/IrrlichtDemo/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -288,7 +288,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/DependentExtensions/IrrlichtDemo/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -301,7 +301,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/DependentExtensions/IrrlichtDemo/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/RakNet -BE:/02_LIBRARY/RakNet --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeFiles\generate.stamp
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -315,17 +315,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CDemo.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMainMenu.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\RakNetStuff.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\resource.h" />
-    <ClInclude Include="E:\02_LIBRARY\RakNet\Samples\PHPDirectoryServer2\PHPDirectoryServer2.h" />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CDemo.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\CMainMenu.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\main.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\RakNetStuff.cpp"  />
-    <ClCompile Include="E:\02_LIBRARY\RakNet\Samples\PHPDirectoryServer2\PHPDirectoryServer2.cpp"  />
-    <None Include="E:\02_LIBRARY\RakNet\DependentExtensions\IrrlichtDemo\readme.txt" />
+    <ClInclude Include="CDemo.h" />
+    <ClInclude Include="CMainMenu.h" />
+    <ClInclude Include="RakNetStuff.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\..\Samples\PHPDirectoryServer2\PHPDirectoryServer2.h" />
+    <ClCompile Include="CDemo.cpp"  />
+    <ClCompile Include="CMainMenu.cpp"  />
+    <ClCompile Include="main.cpp"  />
+    <ClCompile Include="RakNetStuff.cpp"  />
+    <ClCompile Include="..\..\Samples\PHPDirectoryServer2\PHPDirectoryServer2.cpp"  />
+    <None Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:/02_LIBRARY/RakNet/Lib/LibStatic/RakNetLibStatic.vcxproj">
