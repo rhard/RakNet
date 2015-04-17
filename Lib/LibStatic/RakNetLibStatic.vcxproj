@@ -156,6 +156,13 @@
     <Lib>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\32\$(TargetFileName)
+copy /d /y $(ProjectDir)..\..\Source\*.h $(ProjectDir)..\..\include\raknet</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -190,6 +197,13 @@
     <Lib>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\64\$(TargetFileName)
+copy /d /y $(ProjectDir)..\..\Source\*.h $(ProjectDir)..\..\include\raknet</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -224,6 +238,13 @@
     <Lib>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\32\$(TargetFileName)
+copy /d /y $(ProjectDir)..\..\Source\*.h $(ProjectDir)..\..\include\raknet</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -258,6 +279,13 @@
     <Lib>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\64\$(TargetFileName)
+copy /d /y $(ProjectDir)..\..\Source\*.h $(ProjectDir)..\..\include\raknet</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
@@ -292,6 +320,13 @@
     <Lib>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\32\$(TargetFileName)
+copy /d /y $(ProjectDir)..\..\Source\*.h $(ProjectDir)..\..\include\raknet</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
@@ -326,6 +361,13 @@
     <Lib>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\64\$(TargetFileName)
+copy /d /y $(ProjectDir)..\..\Source\*.h $(ProjectDir)..\..\include\raknet</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
@@ -359,6 +401,13 @@
     <Lib>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\32\$(TargetFileName)
+copy /d /y $(ProjectDir)..\..\Source\*.h $(ProjectDir)..\..\include\raknet</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
@@ -392,6 +441,13 @@
     <Lib>
       <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
     </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\64\$(TargetFileName)
+copy /d /y $(ProjectDir)..\..\Source\*.h $(ProjectDir)..\..\include\raknet</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="E:\02_LIBRARY\raknet\Source\AutopatcherPatchContext.h" />
