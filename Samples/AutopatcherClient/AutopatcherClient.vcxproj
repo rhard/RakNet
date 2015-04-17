@@ -1,49 +1,49 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|x64">
+    <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
+      <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
+    <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
+      <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="MinSizeRel|x64">
+    <ProjectConfiguration Include="MinSizeRel|Win32">
       <Configuration>MinSizeRel</Configuration>
-      <Platform>x64</Platform>
+      <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="RelWithDebInfo|x64">
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
       <Configuration>RelWithDebInfo</Configuration>
-      <Platform>x64</Platform>
+      <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{FBAACF97-ED42-43D6-B7C1-5B25942785F9}</ProjectGUID>
+    <ProjectGUID>{B11133AE-6B7D-4A17-BEAF-9BAAFED8D8FF}</ProjectGUID>
     <Keyword>Win32Proj</Keyword>
-    <Platform>x64</Platform>
+    <Platform>Win32</Platform>
     <ProjectName>AutopatcherClient</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
@@ -58,35 +58,35 @@
   <PropertyGroup Label="UserMacros" />
     <PropertyGroup>
       <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\Debug\</OutDir>
-      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AutopatcherClient.dir\Debug\</IntDir>
-      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AutopatcherClient</TargetName>
-      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
-      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
-      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\Release\</OutDir>
-      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AutopatcherClient.dir\Release\</IntDir>
-      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AutopatcherClient</TargetName>
-      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
-      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
-      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\MinSizeRel\</OutDir>
-      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">AutopatcherClient.dir\MinSizeRel\</IntDir>
-      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">AutopatcherClient</TargetName>
-      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
-      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
-      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\RelWithDebInfo\</OutDir>
-      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">AutopatcherClient.dir\RelWithDebInfo\</IntDir>
-      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">AutopatcherClient</TargetName>
-      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
-      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
-      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\02_LIBRARY\raknet\Samples\AutopatcherClient\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AutopatcherClient.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AutopatcherClient</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\02_LIBRARY\raknet\Samples\AutopatcherClient\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AutopatcherClient.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AutopatcherClient</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:\02_LIBRARY\raknet\Samples\AutopatcherClient\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">AutopatcherClient.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">AutopatcherClient</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:\02_LIBRARY\raknet\Samples\AutopatcherClient\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">AutopatcherClient.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">AutopatcherClient</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
     </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalOptions> -w %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -103,10 +103,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -119,8 +119,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/Debug/AutopatcherClient.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/Debug/AutopatcherClient.pdb</ProgramDataBaseFile>
+      <ImportLibrary>E:/02_LIBRARY/raknet/Samples/AutopatcherClient/Debug/AutopatcherClient.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/02_LIBRARY/raknet/Samples/AutopatcherClient/Debug/AutopatcherClient.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -128,10 +128,10 @@
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <AdditionalOptions> -w %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -147,10 +147,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -162,8 +162,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/Release/AutopatcherClient.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/Release/AutopatcherClient.pdb</ProgramDataBaseFile>
+      <ImportLibrary>E:/02_LIBRARY/raknet/Samples/AutopatcherClient/Release/AutopatcherClient.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/02_LIBRARY/raknet/Samples/AutopatcherClient/Release/AutopatcherClient.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -171,10 +171,10 @@
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
       <AdditionalOptions> -w %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -190,10 +190,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -205,8 +205,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/MinSizeRel/AutopatcherClient.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/MinSizeRel/AutopatcherClient.pdb</ProgramDataBaseFile>
+      <ImportLibrary>E:/02_LIBRARY/raknet/Samples/AutopatcherClient/MinSizeRel/AutopatcherClient.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/02_LIBRARY/raknet/Samples/AutopatcherClient/MinSizeRel/AutopatcherClient.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -214,10 +214,10 @@
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
       <AdditionalOptions> -w %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -233,10 +233,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>E:\02_LIBRARY\RakNet\Source;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\.;E:\02_LIBRARY\RakNet\DependentExtensions\Autopatcher;E:\02_LIBRARY\RakNet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\.;E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher;E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -249,8 +249,8 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/RelWithDebInfo/AutopatcherClient.lib</ImportLibrary>
-      <ProgramDataBaseFile>E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/RelWithDebInfo/AutopatcherClient.pdb</ProgramDataBaseFile>
+      <ImportLibrary>E:/02_LIBRARY/raknet/Samples/AutopatcherClient/RelWithDebInfo/AutopatcherClient.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/02_LIBRARY/raknet/Samples/AutopatcherClient/RelWithDebInfo/AutopatcherClient.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -259,10 +259,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
+    <CustomBuild Include="E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/02_LIBRARY/raknet/Samples/AutopatcherClient/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/raknet -BE:/02_LIBRARY/raknet --check-stamp-file E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -270,12 +270,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:/02_LIBRARY/raknet/Samples/AutopatcherClient/CMakeLists.txt;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeLists.txt;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule E:/02_LIBRARY/raknet/Samples/AutopatcherClient/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/raknet -BE:/02_LIBRARY/raknet --check-stamp-file E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -283,12 +283,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:/02_LIBRARY/raknet/Samples/AutopatcherClient/CMakeLists.txt;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeLists.txt;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule E:/02_LIBRARY/raknet/Samples/AutopatcherClient/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/raknet -BE:/02_LIBRARY/raknet --check-stamp-file E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -296,12 +296,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\CMake\bin\cmake.exe" -H../.. -B../.. --check-stamp-file E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:/02_LIBRARY/raknet/Samples/AutopatcherClient/CMakeLists.txt;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeLists.txt;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule E:/02_LIBRARY/raknet/Samples/AutopatcherClient/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files (x86)\CMake\bin\cmake.exe" -HE:/02_LIBRARY/raknet -BE:/02_LIBRARY/raknet --check-stamp-file E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -309,91 +309,91 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:/02_LIBRARY/RakNet/Samples/AutopatcherClient/CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeLists.txt;E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\02_LIBRARY\RakNet\Samples\AutopatcherClient\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:/02_LIBRARY/raknet/Samples/AutopatcherClient/CMakeLists.txt;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeLists.txt;E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:\02_LIBRARY\raknet\Samples\AutopatcherClient\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\DependentExtensions\Autopatcher\ApplyPatch.h" />
-    <ClInclude Include="..\..\DependentExtensions\Autopatcher\AutopatcherClient.h" />
-    <ClInclude Include="..\..\DependentExtensions\Autopatcher\CreatePatch.h" />
-    <ClInclude Include="..\..\DependentExtensions\bzip2-1.0.6\bzlib.h" />
-    <ClInclude Include="..\..\DependentExtensions\bzip2-1.0.6\bzlib_private.h" />
-    <ClInclude Include="..\..\DependentExtensions\Autopatcher\MemoryCompressor.h" />
-    <ClCompile Include="AutopatcherClientTest.cpp"  />
-    <ClCompile Include="..\..\DependentExtensions\Autopatcher\ApplyPatch.cpp"  />
-    <ClCompile Include="..\..\DependentExtensions\Autopatcher\AutopatcherClient.cpp"  />
-    <ClCompile Include="..\..\DependentExtensions\Autopatcher\CreatePatch.cpp"  />
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\blocksort.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClInclude Include="E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher\ApplyPatch.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher\AutopatcherClient.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher\CreatePatch.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\bzlib.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\bzlib_private.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher\MemoryCompressor.h" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\AutopatcherClient\AutopatcherClientTest.cpp"  />
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher\ApplyPatch.cpp"  />
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher\AutopatcherClient.cpp"  />
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher\CreatePatch.cpp"  />
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\blocksort.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\bzip2.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\bzip2.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\bzlib.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\bzlib.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\compress.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\compress.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\crctable.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\crctable.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\decompress.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\decompress.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\huffman.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\huffman.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\randtable.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\randtable.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\spewG.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\spewG.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\bzip2-1.0.6\unzcrash.c" >
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
-      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\bzip2-1.0.6\unzcrash.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\DependentExtensions\Autopatcher\MemoryCompressor.cpp"  />
-    <None Include="readme.txt" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\DependentExtensions\Autopatcher\MemoryCompressor.cpp"  />
+    <None Include="E:\02_LIBRARY\raknet\Samples\AutopatcherClient\readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="E:/02_LIBRARY/RakNet/Lib/LibStatic/RakNetLibStatic.vcxproj">
-      <Project>CA70FC98-F119-4AB0-9DDD-A99259E1D31A</Project>
+    <ProjectReference Include="E:/02_LIBRARY/raknet/Lib/LibStatic/RakNetLibStatic.vcxproj">
+      <Project>4F83DA64-4465-4AF8-9B94-CFBD52966968</Project>
     </ProjectReference>
-    <ProjectReference Include="E:/02_LIBRARY/RakNet/ZERO_CHECK.vcxproj">
-      <Project>77A30C53-87EB-41C6-8215-B9A647B9C655</Project>
+    <ProjectReference Include="E:/02_LIBRARY/raknet/ZERO_CHECK.vcxproj">
+      <Project>EB347710-D252-491A-8D9D-06AF97FF4568</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

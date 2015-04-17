@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\AutopatcherServer\AutopatcherServerTest.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\02_LIBRARY\raknet\Samples\AutopatcherServer\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\02_LIBRARY\raknet\Samples\AutopatcherServer\readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{1B678E55-5E61-4AB1-AB39-9FC88B380012}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

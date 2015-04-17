@@ -1,42 +1,42 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="MasterClient.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\MasterServer\MasterClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MasterClientMain.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\MasterServer\MasterClientMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mastercommon.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\MasterServer\mastercommon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MasterServer.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\MasterServer\MasterServer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MasterServerMain.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\MasterServer\MasterServerMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MasterClient.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\MasterServer\MasterClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MasterCommon.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\MasterServer\MasterCommon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MasterServer.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\MasterServer\MasterServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="CMakeLists.txt" />
+    <CustomBuild Include="E:\02_LIBRARY\raknet\Samples\MasterServer\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{E73BF762-91CF-4CF0-B1D9-26FE23888D7D}</UniqueIdentifier>
+      <UniqueIdentifier>{8A402E29-C92A-4E72-BD1A-DD599108D817}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{CCCC15FA-B156-40E2-858A-3E7E8DED5E45}</UniqueIdentifier>
+      <UniqueIdentifier>{D58A6E24-9A6E-4896-9E9B-FE4F79E51538}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

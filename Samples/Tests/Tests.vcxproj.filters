@@ -1,186 +1,186 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="CommonFunctions.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\CommonFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ComprehensiveConvertTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\ComprehensiveConvertTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ConnectWithSocketTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\ConnectWithSocketTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CrossConnectionConvertTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\CrossConnectionConvertTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DebugTools.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\DebugTools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DroppedConnectionConvertTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\DroppedConnectionConvertTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EightPeerTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\EightPeerTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LocalIsConnectedTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\LocalIsConnectedTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ManyClientsOneServerBlockingTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\ManyClientsOneServerBlockingTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ManyClientsOneServerDeallocateBlockingTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\ManyClientsOneServerDeallocateBlockingTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ManyClientsOneServerDeallocateTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\ManyClientsOneServerDeallocateTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ManyClientsOneServerNonBlockingTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\ManyClientsOneServerNonBlockingTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MaximumConnectTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\MaximumConnectTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MiscellaneousTestsTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\MiscellaneousTestsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OfflineMessagesConvertTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\OfflineMessagesConvertTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PacketAndLowLevelTestsTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\PacketAndLowLevelTestsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PacketChangerPlugin.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\PacketChangerPlugin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PacketDropPlugin.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\PacketDropPlugin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PeerConnectDisconnectTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\PeerConnectDisconnectTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PeerConnectDisconnectWithCancelPendingTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\PeerConnectDisconnectWithCancelPendingTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PingTestsTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\PingTestsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RakTimer.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\RakTimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ReliableOrderedConvertedTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\ReliableOrderedConvertedTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SecurityFunctionsTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\SecurityFunctionsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SystemAddressAndGuidTest.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\SystemAddressAndGuidTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestHelpers.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\TestHelpers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TestInterface.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\TestInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tests.cpp">
+    <ClCompile Include="E:\02_LIBRARY\raknet\Samples\Tests\Tests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CommonFunctions.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\CommonFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ComprehensiveConvertTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\ComprehensiveConvertTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ConnectWithSocketTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\ConnectWithSocketTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CrossConnectionConvertTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\CrossConnectionConvertTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DebugTools.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\DebugTools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DroppedConnectionConvertTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\DroppedConnectionConvertTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EightPeerTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\EightPeerTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IncludeAllTests.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\IncludeAllTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LocalIsConnectedTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\LocalIsConnectedTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ManyClientsOneServerBlockingTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\ManyClientsOneServerBlockingTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ManyClientsOneServerDeallocateBlockingTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\ManyClientsOneServerDeallocateBlockingTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ManyClientsOneServerDeallocateTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\ManyClientsOneServerDeallocateTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ManyClientsOneServerNonBlockingTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\ManyClientsOneServerNonBlockingTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MaximumConnectTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\MaximumConnectTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MiscellaneousTestsTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\MiscellaneousTestsTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OfflineMessagesConvertTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\OfflineMessagesConvertTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PacketAndLowLevelTestsTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\PacketAndLowLevelTestsTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PacketChangerPlugin.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\PacketChangerPlugin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PacketDropPlugin.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\PacketDropPlugin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PeerConnectDisconnectTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\PeerConnectDisconnectTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PeerConnectDisconnectWithCancelPendingTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\PeerConnectDisconnectWithCancelPendingTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PingTestsTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\PingTestsTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RakTimer.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\RakTimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ReliableOrderedConvertedTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\ReliableOrderedConvertedTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SecurityFunctionsTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\SecurityFunctionsTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SystemAddressAndGuidTest.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\SystemAddressAndGuidTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TestHelpers.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\TestHelpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TestInterface.h">
+    <ClInclude Include="E:\02_LIBRARY\raknet\Samples\Tests\TestInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="CMakeLists.txt" />
+    <CustomBuild Include="E:\02_LIBRARY\raknet\Samples\Tests\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{E73BF762-91CF-4CF0-B1D9-26FE23888D7D}</UniqueIdentifier>
+      <UniqueIdentifier>{8A402E29-C92A-4E72-BD1A-DD599108D817}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{CCCC15FA-B156-40E2-858A-3E7E8DED5E45}</UniqueIdentifier>
+      <UniqueIdentifier>{D58A6E24-9A6E-4896-9E9B-FE4F79E51538}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
