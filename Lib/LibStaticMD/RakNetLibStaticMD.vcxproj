@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>RakNetLibStaticMD</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\02_LIBRARY\raknet\Lib\LibStatic\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RakNetLibStatic.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">raknetlibstaticd</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">raknetlibstaticd</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\02_LIBRARY\raknet\Lib\LibStatic\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RakNetLibStatic.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">raknetlibstatic</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">raknetlibstatic</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:\02_LIBRARY\raknet\Lib\LibStatic\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">RakNetLibStatic.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">RakNetLibStatic</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">RakNetLibStatic</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:\02_LIBRARY\raknet\Lib\LibStatic\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">RakNetLibStatic.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">RakNetLibStatic</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">RakNetLibStatic</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\MD\32\$(TargetFileName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\MD\64\$(TargetFileName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\MD\32\$(TargetFileName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\MD\64\$(TargetFileName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\MD\64\$(TargetFileName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\MD\64\$(TargetFileName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\MD\64\$(TargetFileName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_RAKNET_LIB;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\02_LIBRARY\raknet\Source;E:\02_LIBRARY\raknet\DependentExtensions\openssl-1.0.0d\include;E:\02_LIBRARY\raknet\DependentExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <IgnoreSpecificDefaultLibraries>LIBCD.lib LIBCMTD.lib MSVCRT.lib</IgnoreSpecificDefaultLibraries>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy /d /y $(TargetPath) $(ProjectDir)..\..\libs\win\MD\64\$(TargetFileName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy files</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\AutopatcherPatchContext.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\AutopatcherRepositoryInterface.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\Base64Encoder.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\BitStream.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\CCRakNetSlidingWindow.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\CCRakNetUDT.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\CheckSum.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\CloudClient.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\CloudCommon.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\CloudServer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\CommandParserInterface.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\ConnectionGraph2.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\ConsoleServer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DataCompressor.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DirectoryDeltaTransfer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DR_SHA1.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_BinarySearchTree.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_BPlusTree.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_BytePool.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_ByteQueue.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_Hash.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_Heap.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_HuffmanEncodingTree.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_HuffmanEncodingTreeFactory.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_HuffmanEncodingTreeNode.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_LinkedList.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_List.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_Map.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_MemoryPool.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_Multilist.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_OrderedChannelHeap.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_OrderedList.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_Queue.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_QueueLinkedList.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_RangeList.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_Table.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_ThreadsafeAllocatingQueue.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_Tree.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DS_WeightedGraph.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\DynDNS.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\EmailSender.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\EmptyHeader.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\EpochTimeToString.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\Export.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\FileList.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\FileListNodeContext.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\FileListTransfer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\FileListTransferCBInterface.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\FileOperations.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\FormatString.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\FullyConnectedMesh2.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\Getche.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\Gets.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\GetTime.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\gettimeofday.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\GridSectorizer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\HTTPConnection.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\HTTPConnection2.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\IncrementalReadInterface.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\InternalPacket.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\Itoa.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\Kbhit.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\LinuxStrings.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\LocklessTypes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\LogCommandParser.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\MessageFilter.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\MessageIdentifiers.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\MTUSize.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NativeFeatureIncludes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NativeFeatureIncludesOverrides.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NativeTypes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NatPunchthroughClient.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NatPunchthroughServer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NatTypeDetectionClient.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NatTypeDetectionCommon.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NatTypeDetectionServer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NetworkIDManager.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\NetworkIDObject.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PacketConsoleLogger.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PacketFileLogger.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PacketizedTCP.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PacketLogger.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PacketOutputWindowLogger.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PacketPool.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PacketPriority.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PluginInterface2.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PS3Includes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\PS4Includes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\Rackspace.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakAlloca.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakAssert.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakMemoryOverride.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetCommandParser.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetDefines.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetDefinesOverrides.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetSmartPtr.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetSocket.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetStatistics.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetTime.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetTransport2.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetTypes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakNetVersion.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakPeer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakPeerInterface.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakSleep.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakString.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakThread.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RakWString.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\Rand.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RandSync.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\ReadyEvent.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RefCountedObj.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RelayPlugin.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\ReliabilityLayer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\ReplicaEnums.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\ReplicaManager3.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\Router2.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\RPC4Plugin.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SecureHandshake.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SendToThread.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SignaledEvent.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SimpleMutex.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SimpleTCPServer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SingleProducerConsumer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SocketDefines.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SocketIncludes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SocketLayer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\StatisticsHistory.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\StringCompressor.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\StringTable.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\SuperFastHash.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\TableSerializer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\TCPInterface.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\TeamBalancer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\TeamManager.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\TelnetTransport.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\ThreadPool.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\ThreadsafePacketLogger.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\TransportInterface.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\TwoWayAuthentication.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\UDPForwarder.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\UDPProxyClient.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\UDPProxyCommon.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\UDPProxyCoordinator.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\UDPProxyServer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\VariableDeltaSerializer.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\VariableListDeltaTracker.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\VariadicSQLParser.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\VitaIncludes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\WindowsIncludes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\WSAStartupSingleton.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\XBox360Includes.h" />
+    <ClInclude Include="E:\02_LIBRARY\raknet\Source\_FindFirst.h" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\Base64Encoder.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\BitStream.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\CCRakNetSlidingWindow.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\CCRakNetUDT.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\CheckSum.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\CloudClient.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\CloudCommon.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\CloudServer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\CommandParserInterface.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\ConnectionGraph2.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\ConsoleServer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\DataCompressor.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\DirectoryDeltaTransfer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\DR_SHA1.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\DS_BytePool.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\DS_ByteQueue.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\DS_HuffmanEncodingTree.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\DS_Table.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\DynDNS.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\EmailSender.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\EpochTimeToString.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\FileList.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\FileListTransfer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\FileOperations.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\FormatString.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\FullyConnectedMesh2.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\Getche.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\Gets.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\GetTime.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\gettimeofday.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\GridSectorizer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\HTTPConnection.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\HTTPConnection2.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\IncrementalReadInterface.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\Itoa.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\LinuxStrings.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\LocklessTypes.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\LogCommandParser.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\MessageFilter.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\NatPunchthroughClient.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\NatPunchthroughServer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\NatTypeDetectionClient.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\NatTypeDetectionCommon.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\NatTypeDetectionServer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\NetworkIDManager.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\NetworkIDObject.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\PacketConsoleLogger.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\PacketFileLogger.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\PacketizedTCP.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\PacketLogger.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\PacketOutputWindowLogger.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\PluginInterface2.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\PS4Includes.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\Rackspace.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakMemoryOverride.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetCommandParser.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_360_720.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_Berkley.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_Berkley_NativeClient.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_NativeClient.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_PS3_PS4.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_PS4.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_Vita.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_WindowsStore8.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_Windows_Linux.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetSocket2_Windows_Linux_360.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetStatistics.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetTransport2.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakNetTypes.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakPeer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakSleep.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakString.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakThread.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RakWString.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\Rand.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RandSync.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\ReadyEvent.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RelayPlugin.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\ReliabilityLayer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\ReplicaManager3.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\Router2.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\RPC4Plugin.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\SecureHandshake.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\SendToThread.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\SignaledEvent.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\SimpleMutex.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\SocketLayer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\StatisticsHistory.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\StringCompressor.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\StringTable.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\SuperFastHash.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\TableSerializer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\TCPInterface.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\TeamBalancer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\TeamManager.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\TelnetTransport.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\ThreadsafePacketLogger.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\TwoWayAuthentication.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\UDPForwarder.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\UDPProxyClient.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\UDPProxyCoordinator.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\UDPProxyServer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\VariableDeltaSerializer.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\VariableListDeltaTracker.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\VariadicSQLParser.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\VitaIncludes.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\WSAStartupSingleton.cpp" />
+    <ClCompile Include="E:\02_LIBRARY\raknet\Source\_FindFirst.cpp" />
+    <None Include="E:\02_LIBRARY\raknet\Lib\LibStatic\readme.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

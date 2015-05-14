@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio Express 2013 for Windows Desktop
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{C57ED430-B140-47E5-B39B-ED636D74D949}"
@@ -273,6 +273,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakNetDLL", "Lib\DLL\RakNetDLL.vcxproj", "{0AAAF102-0D94-439A-9BE2-3DF73D62B042}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakNetLibStatic", "Lib\LibStatic\RakNetLibStatic.vcxproj", "{4F83DA64-4465-4AF8-9B94-CFBD52966968}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakNetLibStaticMD", "Lib\LibStaticMD\RakNetLibStaticMD.vcxproj", "{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RakVoice", "Samples\RakVoice\RakVoice.vcxproj", "{19146D59-6CEC-404B-ABA5-31FDB5588EC7}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -903,6 +905,22 @@ Global
 		{4F83DA64-4465-4AF8-9B94-CFBD52966968}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
 		{4F83DA64-4465-4AF8-9B94-CFBD52966968}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
 		{4F83DA64-4465-4AF8-9B94-CFBD52966968}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.Debug|Win32.Build.0 = Debug|Win32
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.Debug|x64.ActiveCfg = Debug|x64
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.Debug|x64.Build.0 = Debug|x64
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.MinSizeRel|Win32.ActiveCfg = MinSizeRel|Win32
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.MinSizeRel|Win32.Build.0 = MinSizeRel|Win32
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.Release|Win32.ActiveCfg = Release|Win32
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.Release|Win32.Build.0 = Release|Win32
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.Release|x64.ActiveCfg = Release|x64
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.Release|x64.Build.0 = Release|x64
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.RelWithDebInfo|Win32.ActiveCfg = RelWithDebInfo|Win32
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{6EAC995A-C3C4-4E00-B98A-1987A6AAA0E1}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
 		{19146D59-6CEC-404B-ABA5-31FDB5588EC7}.Debug|Win32.ActiveCfg = Debug|Win32
 		{19146D59-6CEC-404B-ABA5-31FDB5588EC7}.Debug|Win32.Build.0 = Debug|Win32
 		{19146D59-6CEC-404B-ABA5-31FDB5588EC7}.Debug|x64.ActiveCfg = Debug|Win32

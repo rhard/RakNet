@@ -6,6 +6,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "upnpc-shared", "upnpc-share
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "upnpc-static", "upnpc-static.vcxproj", "{DA0F9A28-36E2-49B6-8EAE-55C34F558328}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "upnpc-static-MD", "upnpc-static-MD.vcxproj", "{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -50,6 +52,22 @@ Global
 		{DA0F9A28-36E2-49B6-8EAE-55C34F558328}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
 		{DA0F9A28-36E2-49B6-8EAE-55C34F558328}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
 		{DA0F9A28-36E2-49B6-8EAE-55C34F558328}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.Debug|Win32.Build.0 = Debug|Win32
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.Debug|x64.ActiveCfg = Debug|x64
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.Debug|x64.Build.0 = Debug|x64
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.MinSizeRel|Win32.ActiveCfg = MinSizeRel|Win32
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.MinSizeRel|Win32.Build.0 = MinSizeRel|Win32
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.Release|Win32.ActiveCfg = Release|Win32
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.Release|Win32.Build.0 = Release|Win32
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.Release|x64.ActiveCfg = Release|x64
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.Release|x64.Build.0 = Release|x64
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.RelWithDebInfo|Win32.ActiveCfg = RelWithDebInfo|Win32
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{6107DD20-D217-44A4-B8E1-5B65A7C0BB2A}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
