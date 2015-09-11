@@ -69,10 +69,48 @@ void GetMyIP_Windows_Linux_IPV4And6( SystemAddress addresses[MAXIMUM_NUMBER_OF_I
 #endif
 void GetMyIP_Windows_Linux_IPV4( SystemAddress addresses[MAXIMUM_NUMBER_OF_INTERNAL_IDS] )
 {
+   struct ifaddrs *ifaddr, *ifa;
+   int family, s;
+   char host[NI_MAXHOST];
+        struct in_addr linux_in_addr;
+
+   if (getifaddrs(&ifaddr) == -1) {
+      //printf( "Error getting interface list\n");
+   }
+        int idx = 0;
+   for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next) {
+      if (!ifa->ifa_addr) continue;
+      family = ifa->ifa_addr->sa_family;
+
+      if (family == AF_INET) {
+         s = getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host, NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
+         if (s != 0) {
+            //printf ("getnameinfo() failed: %s\n", gai_strerror(s));
+         }
+         //printf ("IP address: %s\n", host);
+            //strcpy( &addresses[idx].address.addr4, host );
+	    addresses[idx].FromString(host);
+	    //memcpy(&addresses[idx].address.addr4.sin_addr,host,strlen(host)+1);
+            //if (inet_aton(host, &linux_in_addr) == 0) {
+            //    perror("inet_aton");
+            //}
+            //else {
+            //    binaryAddresses[idx]=linux_in_addr.s_addr;
+            //}
+            idx++;
+      }
+   }
+
+	while (idx < MAXIMUM_NUMBER_OF_INTERNAL_IDS)
+	{
+		addresses[idx]=UNASSIGNED_SYSTEM_ADDRESS;
+		idx++;
+	}
+
+   freeifaddrs(ifaddr);
 
 
-
-	int idx=0;
+/*	int idx=0;
 	char ac[ 80 ];
 	int err = gethostname( ac, sizeof( ac ) );
     (void) err;
@@ -98,6 +136,7 @@ void GetMyIP_Windows_Linux_IPV4( SystemAddress addresses[MAXIMUM_NUMBER_OF_INTER
 		addresses[idx]=UNASSIGNED_SYSTEM_ADDRESS;
 		idx++;
 	}
+*/
 
 }
 
