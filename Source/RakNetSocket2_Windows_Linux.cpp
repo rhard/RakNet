@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  LICENSE file in the root directory of this source tree. An additional grant
  *  of patent rights can be found in the PATENTS file in the same directory.
  *
  */
@@ -32,7 +32,7 @@ void GetMyIP_Windows_Linux_IPV4And6( SystemAddress addresses[MAXIMUM_NUMBER_OF_I
 	char ac[ 80 ];
 	int err = gethostname( ac, sizeof( ac ) );
 	RakAssert(err != -1);
-	
+
 	struct addrinfo hints;
 	struct addrinfo *servinfo=0, *aip;  // will point to the results
 	PrepareAddrInfoHints2(&hints);
@@ -54,7 +54,7 @@ void GetMyIP_Windows_Linux_IPV4And6( SystemAddress addresses[MAXIMUM_NUMBER_OF_I
 	}
 
 	freeaddrinfo(servinfo); // free the linked-list
-	
+
 	while (idx < MAXIMUM_NUMBER_OF_INTERNAL_IDS)
 	{
 		addresses[idx]=UNASSIGNED_SYSTEM_ADDRESS;
@@ -64,42 +64,44 @@ void GetMyIP_Windows_Linux_IPV4And6( SystemAddress addresses[MAXIMUM_NUMBER_OF_I
 
 #else
 
-#if (defined(__GNUC__)  || defined(__GCCXML__)) && !defined(__WIN32__)
+#if (defined(__GNUC__)  || defined(__GCCXML__)) && !defined(_WIN32)
 #include <netdb.h>
 #endif
 void GetMyIP_Windows_Linux_IPV4( SystemAddress addresses[MAXIMUM_NUMBER_OF_INTERNAL_IDS] )
 {
-   struct ifaddrs *ifaddr, *ifa;
-   int family, s;
-   char host[NI_MAXHOST];
-        struct in_addr linux_in_addr;
+#if !defined(_WIN32)
 
-   if (getifaddrs(&ifaddr) == -1) {
-      //printf( "Error getting interface list\n");
-   }
-        int idx = 0;
-   for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next) {
-      if (!ifa->ifa_addr) continue;
-      family = ifa->ifa_addr->sa_family;
+	struct ifaddrs *ifaddr, *ifa;
+	int family, s;
+	char host[NI_MAXHOST];
+	struct in_addr linux_in_addr;
 
-      if (family == AF_INET) {
-         s = getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host, NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
-         if (s != 0) {
-            //printf ("getnameinfo() failed: %s\n", gai_strerror(s));
-         }
-         //printf ("IP address: %s\n", host);
-            //strcpy( &addresses[idx].address.addr4, host );
-	    addresses[idx].FromString(host);
-	    //memcpy(&addresses[idx].address.addr4.sin_addr,host,strlen(host)+1);
-            //if (inet_aton(host, &linux_in_addr) == 0) {
-            //    perror("inet_aton");
-            //}
-            //else {
-            //    binaryAddresses[idx]=linux_in_addr.s_addr;
-            //}
-            idx++;
-      }
-   }
+	if (getifaddrs(&ifaddr) == -1) {
+		//printf( "Error getting interface list\n");
+	}
+	int idx = 0;
+	for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next) {
+		if (!ifa->ifa_addr) continue;
+		family = ifa->ifa_addr->sa_family;
+
+		if (family == AF_INET) {
+			s = getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host, NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
+			if (s != 0) {
+				//printf ("getnameinfo() failed: %s\n", gai_strerror(s));
+			}
+			//printf ("IP address: %s\n", host);
+			//strcpy( &addresses[idx].address.addr4, host );
+			addresses[idx].FromString(host);
+			//memcpy(&addresses[idx].address.addr4.sin_addr,host,strlen(host)+1);
+			//if (inet_aton(host, &linux_in_addr) == 0) {
+			//    perror("inet_aton");
+			//}
+			//else {
+			//    binaryAddresses[idx]=linux_in_addr.s_addr;
+			//}
+			idx++;
+		}
+	}
 
 	while (idx < MAXIMUM_NUMBER_OF_INTERNAL_IDS)
 	{
@@ -107,15 +109,16 @@ void GetMyIP_Windows_Linux_IPV4( SystemAddress addresses[MAXIMUM_NUMBER_OF_INTER
 		idx++;
 	}
 
-   freeifaddrs(ifaddr);
+	freeifaddrs(ifaddr);
 
+#else
 
-/*	int idx=0;
+	int idx=0;
 	char ac[ 80 ];
 	int err = gethostname( ac, sizeof( ac ) );
-    (void) err;
+	(void) err;
 	RakAssert(err != -1);
-	
+
 	struct hostent *phe = gethostbyname( ac );
 
 	if ( phe == 0 )
@@ -130,14 +133,15 @@ void GetMyIP_Windows_Linux_IPV4( SystemAddress addresses[MAXIMUM_NUMBER_OF_INTER
 
 		memcpy(&addresses[idx].address.addr4.sin_addr,phe->h_addr_list[ idx ],sizeof(struct in_addr));
 	}
-	
+
 	while (idx < MAXIMUM_NUMBER_OF_INTERNAL_IDS)
 	{
 		addresses[idx]=UNASSIGNED_SYSTEM_ADDRESS;
 		idx++;
 	}
-*/
 
+
+#endif // _WIN32
 }
 
 #endif // RAKNET_SUPPORT_IPV6==1
@@ -145,11 +149,11 @@ void GetMyIP_Windows_Linux_IPV4( SystemAddress addresses[MAXIMUM_NUMBER_OF_INTER
 
 void GetMyIP_Windows_Linux( SystemAddress addresses[MAXIMUM_NUMBER_OF_INTERNAL_IDS] )
 {
-	#if RAKNET_SUPPORT_IPV6==1
-		GetMyIP_Windows_Linux_IPV4And6(addresses);
-	#else
-		GetMyIP_Windows_Linux_IPV4(addresses);
-	#endif
+#if RAKNET_SUPPORT_IPV6==1
+	GetMyIP_Windows_Linux_IPV4And6(addresses);
+#else
+	GetMyIP_Windows_Linux_IPV4(addresses);
+#endif
 }
 
 
