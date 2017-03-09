@@ -26,6 +26,8 @@
 // How often to check for ID_TWO_WAY_AUTHENTICATION_OUTGOING_CHALLENGE_TIMEOUT, and the minimum timeout time. Maximum is double this value.
 #define CHALLENGE_MINIMUM_TIMEOUT 3000
 
+#include "PluginInterface2.h"
+
 #if LIBCAT_SECURITY==1
 // From CPP FILE:
 // static const int HASH_BITS = 256;
@@ -39,7 +41,6 @@
 #define HASHED_NONCE_AND_PW_LENGTH SHA1_LENGTH
 #endif
 
-#include "PluginInterface2.h"
 #include "RakMemoryOverride.h"
 #include "NativeTypes.h"
 #include "RakString.h"
