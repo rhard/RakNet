@@ -21,7 +21,7 @@ IF(WIN32 AND NOT UNIX)
 			set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:\"LIBCD.lib LIBCMTD.lib MSVCRT.lib\"" )
 			set_target_properties(RakNetLibStatic PROPERTIES DEBUG_POSTFIX d)
 		ELSE()
-			set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:&quot;LIBCD.lib LIBCMTD.lib MSVCRT.lib&quot;" )
+			set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:\"LIBCD.lib LIBCMTD.lib MSVCRT.lib\"" )
 		ENDIF()
 				
 	ENDIF(NOT ${CMAKE_GENERATOR} STREQUAL "MSYS Makefiles")
