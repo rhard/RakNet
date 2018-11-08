@@ -4,11 +4,7 @@ project(RakNetLibStatic)
 FILE(GLOB ALL_HEADER_SRCS ${RakNet_SOURCE_DIR}/Source/*.h)
 FILE(GLOB ALL_CPP_SRCS ${RakNet_SOURCE_DIR}/Source/*.cpp)
 
-include_directories( ${RAKNET_INTERNAL_INCLUDE_DIRS} )
-
-IF(RAKNET_SUPPORT_IPV6)
-	add_definitions(-DRAKNET_SUPPORT_IPV6=1)
-ENDIF
+include_directories( ${RAKNET_INTERNAL_INCLUDE_DIRS} ) 
 
 add_library(RakNetLibStatic STATIC ${ALL_CPP_SRCS} ${ALL_HEADER_SRCS} readme.txt)
 
@@ -25,7 +21,7 @@ IF(WIN32 AND NOT UNIX)
 			set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:\"LIBCD.lib LIBCMTD.lib MSVCRT.lib\"" )
 			set_target_properties(RakNetLibStatic PROPERTIES DEBUG_POSTFIX d)
 		ELSE()
-			set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:LIBCD.lib LIBCMTD.lib MSVCRT.lib" )
+			set_target_properties(RakNetLibStatic PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB:\"LIBCD.lib LIBCMTD.lib MSVCRT.lib\"" )
 		ENDIF()
 				
 	ENDIF(NOT ${CMAKE_GENERATOR} STREQUAL "MSYS Makefiles")
