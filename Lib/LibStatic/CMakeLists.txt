@@ -8,7 +8,7 @@ include_directories( ${RAKNET_INTERNAL_INCLUDE_DIRS} )
 
 IF(RAKNET_SUPPORT_IPV6)
 	add_definitions(-DRAKNET_SUPPORT_IPV6=1)
-ENDIF
+ENDIF(RAKNET_SUPPORT_IPV6)
 
 add_library(RakNetLibStatic STATIC ${ALL_CPP_SRCS} ${ALL_HEADER_SRCS} readme.txt)
 
