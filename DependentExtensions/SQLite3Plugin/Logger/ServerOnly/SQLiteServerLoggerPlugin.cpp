@@ -2,7 +2,7 @@
  * This file was taken from RakNet 4.082.
  * Please see licenses/RakNet license.txt for the underlying license and related copyright.
  *
- * Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ * Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  * This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  * license found in the license.txt file in the root directory of this source tree.
@@ -21,7 +21,14 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/timeb.h>
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable:4505) // unreferenced local function
+#endif
 #include "DXTCompressor.h"
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
 #include "slikenet/linux_adapter.h"
 
 // http://web.utk.edu/~jplyon/sqlite/SQLite_optimization_FAQ.html
@@ -89,8 +96,6 @@ const char *GetSqlDataTypeName2(SQLLoggerPrimaryDataType idx) {return sqlDataTyp
 
 void CompressAsJpeg(char **cptrInOut, uint32_t *sizeInOut, uint16_t imageWidth, uint16_t imageHeight, int16_t linePitch, unsigned char input_components)
 {
-	SLNet::TimeUS t1= SLNet::GetTimeUS();
-
 	// Compress to jpg
 	// http://www.google.com/codesearch/p?hl=en#I-_InJ6STRE/gthumb-1.108/libgthumb/pixbuf-utils.c&q=jpeg_create_compress
 	// http://ftp.gnome.org	/ pub/	GNOME	/	sources	/gthumb	/1.108/	gthumb-1.108.tar.gz/ 
@@ -133,9 +138,6 @@ void CompressAsJpeg(char **cptrInOut, uint32_t *sizeInOut, uint16_t imageWidth, 
 	rakFree_Ex(*cptrInOut,_FILE_AND_LINE_);
 	*cptrInOut = (char*) rakRealloc_Ex(storage, jpegSizeAfterCompression,_FILE_AND_LINE_);
 	*sizeInOut=jpegSizeAfterCompression;
-
-	SLNet::TimeUS t2= SLNet::GetTimeUS();
-	SLNet::TimeUS diff=t2-t1;
 }
 static bool needsDxtInit=true;
 static bool dxtCompressionSupported=false;
@@ -179,7 +181,7 @@ SQLiteServerLoggerPlugin::CPUThreadOutput* ExecCPULoggingThread(SQLiteServerLogg
 		// outputNode->whenMessageArrived = cpuThreadInput->cpuInputArray[i].whenMessageArrived;
 		outputNode->packet=packet;
 		
-		packet->systemAddress.ToString(true,outputNode->ipAddressString,32);
+		packet->systemAddress.ToString(true,outputNode->ipAddressString,static_cast<size_t>(32));
 		SLNet::BitStream bitStream(packet->data, packet->length, false);
 		bitStream.IgnoreBytes(1);
 		bitStream.Read(outputNode->dbIdentifier);
@@ -195,7 +197,7 @@ SQLiteServerLoggerPlugin::CPUThreadOutput* ExecCPULoggingThread(SQLiteServerLogg
 		{
 			SLNet::RakString columnName;
 		//	printf("2. parameterCount=%i, ",outputNode->parameterCount);
-			for (int i=0; i < outputNode->parameterCount; i++)
+			for (int j=0; j < outputNode->parameterCount; j++)
 			{
 				bitStream.Read(columnName);
 				columnName.SQLEscape();
@@ -590,10 +592,9 @@ SQLiteServerLoggerPlugin::SQLThreadOutput ExecSQLLoggingThread(SQLiteServerLogge
 			return sqlThreadOutput;
 		}
 
-		int rc = sqlite3_step(pragmaTableInfo);
+		rc = sqlite3_step(pragmaTableInfo);
 		DataStructures::List<SLNet::RakString> existingColumnNames;
 		DataStructures::List<SLNet::RakString> existingColumnTypes;
-		char *errorMsg;
 		while (rc==SQLITE_ROW)
 		{
 			/*
@@ -859,7 +860,8 @@ void SQLiteServerLoggerPlugin::Update(void)
 				if (dbHandles.GetSize()>0)
 					idx=0;
 				else
-					idx=-1;
+					// #high - use a better approach than this static case here
+					idx=static_cast<unsigned int>(-1);
 			}
 			else
 			{
@@ -947,7 +949,7 @@ PluginReceiveResult SQLiteServerLoggerPlugin::OnReceive(Packet *packet)
 			if (sessionManagementMode==CREATE_EACH_NAMED_DB_HANDLE)
 			{
 				unsigned char senderAddr[32];
-				packet->systemAddress.ToString(true,(char*) senderAddr, 32);
+				packet->systemAddress.ToString(true,(char*) senderAddr, static_cast<size_t>(32));
 				dbIdentifier+=':';
 				dbIdentifier+=senderAddr;
 			}
@@ -1173,7 +1175,8 @@ unsigned int SQLiteServerLoggerPlugin::CreateDBHandle(SLNet::RakString dbIdentif
 	if (sqlite3_open_v2(fileNameWithPath.C_String(), &database, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, 0)!=SQLITE_OK)
 	{
 		RakAssert("sqlite3_open_v2 failed in SQLiteServerLoggerPlugin.cpp" && 0);
-		return -1;
+		// #high - change this - return value to int?
+		return static_cast<unsigned int>(-1);
 	}
 	if (AddDBHandle(dbIdentifier, database, true))
 	{
@@ -1189,12 +1192,10 @@ unsigned int SQLiteServerLoggerPlugin::CreateDBHandle(SLNet::RakString dbIdentif
 		printf("Created %s\n", fileNameWithPath.C_String());
 		return dbHandles.GetIndexOf(dbIdentifier);
 	}
-	else
-	{
-		RakAssert("Failed to call AddDbHandle" && 0);
-		return -1;
-	}
-	return -1;
+
+	RakAssert("Failed to call AddDbHandle" && 0);
+	// #high - change this - return value to int?
+	return static_cast<unsigned int>(-1);
 }
 void SQLiteServerLoggerPlugin::SetSessionManagementMode(SessionManagementMode _sessionManagementMode, bool _createDirectoryForFile, const char *_newDatabaseFilePath)
 {
@@ -1215,12 +1216,13 @@ void SQLiteServerLoggerPlugin::StopCPUSQLThreads(void)
 	ClearCpuThreadInput();
 	for (i=0; i < cpuLoggerThreadPool.InputSize(); i++)
 	{
-		CPUThreadInput *cpuThreadInput = cpuLoggerThreadPool.GetInputAtIndex(i);
-		for (j=0; j < cpuThreadInput->arraySize; j++)
+		// #med - change class member - then revert name to cpuThradInput
+		CPUThreadInput *curCPUThreadInput = cpuLoggerThreadPool.GetInputAtIndex(i);
+		for (j=0; j < curCPUThreadInput->arraySize; j++)
 		{
-			DeallocPacketUnified(cpuThreadInput->cpuInputArray[j].packet);
+			DeallocPacketUnified(curCPUThreadInput->cpuInputArray[j].packet);
 		}
-		SLNet::OP_DELETE(cpuThreadInput,_FILE_AND_LINE_);
+		SLNet::OP_DELETE(curCPUThreadInput,_FILE_AND_LINE_);
 	}
 	cpuLoggerThreadPool.ClearInput();
 	for (i=0; i < cpuLoggerThreadPool.OutputSize(); i++)

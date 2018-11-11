@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -41,7 +41,7 @@ void AutopatcherServerLoadNotifier_Printf::OnQueueUpdate(SystemAddress remoteSys
 	char *operationString;
 	char *requestTypeString;
 	char systemAddressString[32];
-	remoteSystem.ToString(true, systemAddressString, 32);
+	remoteSystem.ToString(true, systemAddressString, static_cast<size_t>(32));
 	if (requestType==ASUMC_GET_CHANGELIST)
 		requestTypeString="GetChangelist";
 	else
@@ -50,7 +50,7 @@ void AutopatcherServerLoadNotifier_Printf::OnQueueUpdate(SystemAddress remoteSys
 		operationString="added";
 	else if (queueOperation==QO_POPPED_ONTO_TO_PROCESSING_THREAD)
 		operationString="processing";
-	else if (queueOperation==QO_WAS_ABORTED)
+	else // otherwise queueOperation == QO_WAS_ABORTED
 		operationString="aborted";
 
 	printf("%s %s %s. %i queued. %i working.\n", systemAddressString, requestTypeString, operationString, autopatcherState->requestsQueued, autopatcherState->requestsWorking);
@@ -61,7 +61,7 @@ void AutopatcherServerLoadNotifier_Printf::OnGetChangelistCompleted(
 									  AutopatcherServerLoadNotifier::AutopatcherState *autopatcherState)
 {
 	char systemAddressString[32];
-	remoteSystem.ToString(true, systemAddressString, 32);
+	remoteSystem.ToString(true, systemAddressString, static_cast<size_t>(32));
 
 	char *changelistString;
 	if (getChangelistResult==GCR_DELETE_FILES)
@@ -72,7 +72,7 @@ void AutopatcherServerLoadNotifier_Printf::OnGetChangelistCompleted(
 		changelistString="Add and delete files";
 	else if (getChangelistResult==GCR_NOTHING_TO_DO)
 		changelistString="No files in changelist";
-	else if (getChangelistResult==GCR_REPOSITORY_ERROR)
+	else // otherwise getChangelistResult == GCR_REPOSITORY_ERROR
 		changelistString="Repository error";
 
 	printf("%s GetChangelist complete. %s. %i queued. %i working.\n", systemAddressString, changelistString, autopatcherState->requestsQueued, autopatcherState->requestsWorking);
@@ -80,7 +80,7 @@ void AutopatcherServerLoadNotifier_Printf::OnGetChangelistCompleted(
 void AutopatcherServerLoadNotifier_Printf::OnGetPatchCompleted(SystemAddress remoteSystem, AutopatcherServerLoadNotifier::PatchResult patchResult, AutopatcherServerLoadNotifier::AutopatcherState *autopatcherState)
 {
 	char systemAddressString[32];
-	remoteSystem.ToString(true, systemAddressString, 32);
+	remoteSystem.ToString(true, systemAddressString, static_cast<size_t>(32));
 
 	char *patchResultString;
 	if (patchResult==PR_NO_FILES_NEEDED_PATCHING)
@@ -93,7 +93,7 @@ void AutopatcherServerLoadNotifier_Printf::OnGetPatchCompleted(SystemAddress rem
 		patchResultString="Files pushed for patching";
 	else if (patchResult==PR_ABORTED_FROM_INPUT_THREAD)
 		patchResultString="Aborted from input thread";
-	else if (patchResult==PR_ABORTED_FROM_DOWNLOAD_THREAD)
+	else // otherwise patchResult == PR_ABORTED_FROM_DOWNLOAD_THREAD
 		patchResultString="Aborted from download thread";
 
 	printf("%s GetPatch complete. %s. %i queued. %i working.\n", systemAddressString, patchResultString, autopatcherState->requestsQueued, autopatcherState->requestsWorking);
@@ -267,8 +267,7 @@ void AutopatcherServer::OnClosedConnection(const SystemAddress &systemAddress, R
 }
 void AutopatcherServer::RemoveFromThreadPool(SystemAddress systemAddress)
 {
-	unsigned i;
-	i=0;
+	unsigned int i = 0;
 	threadPool.LockInput();
 	while (i < threadPool.InputSize())
 	{

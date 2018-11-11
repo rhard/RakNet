@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -27,6 +27,7 @@
 #include "slikenet/peerinterface.h"
 #include "slikenet/ConnectionGraph2.h"
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
 
@@ -88,25 +89,48 @@ bool CloudServerHelper::ParseCommandLineParameters(int argc, char **argv)
 	else serverToServerPassword=argv[1];
 
 	if (argc<3) rakPeerPort=DEFAULT_SERVER_PORT;
-	else rakPeerPort=atoi(argv[2]);
+	else {
+		const int intPeerPort = atoi(argv[2]);
+		if ((intPeerPort < 0) || (intPeerPort > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified peer port %d is outside valid bounds [0, %u]", intPeerPort, std::numeric_limits<unsigned short>::max());
+			return false;
+		}
+		rakPeerPort = static_cast<unsigned short>(rakPeerPort);
+	}
 
 	if (argc<4) allowedIncomingConnections=DEFAULT_ALLOWED_INCOMING_CONNECTIONS;
-	else allowedIncomingConnections=atoi(argv[3]);
+	else {
+		const int intConnections = atoi(argv[3]);
+		if ((intConnections < 0) || (intConnections > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified allowed incoming connections %d is outside valid bounds [0, %u]", intConnections, std::numeric_limits<unsigned short>::max());
+			return false;
+		}
+		allowedIncomingConnections = static_cast<unsigned short>(intConnections);
+	}
 
 	if (argc<5) allowedOutgoingConnections=DEFAULT_ALLOWED_OUTGOING_CONNECTIONS;
-	else allowedOutgoingConnections=atoi(argv[4]);
+	else {
+		const int intConnections = atoi(argv[4]);
+		if ((intConnections < 0) || (intConnections > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified allowed outgoing connections %d is outside valid bounds [0, %u]", intConnections, std::numeric_limits<unsigned short>::max());
+			return false;
+		}
+		allowedOutgoingConnections = static_cast<unsigned short>(intConnections);
+	}
 
 	return true;
 }
 
 bool CloudServerHelper_DynDns::ParseCommandLineParameters(int argc, char **argv)
 {
-	char *DEFAULT_DNS_HOST="test.dnsalias.net";
-	char *DEFAULT_USERNAME_AND_PASSWORD="test:test";
-	char *DEFAULT_SERVER_TO_SERVER_PASSWORD="qwerty1234";
 	const unsigned short DEFAULT_SERVER_PORT=60000;
 	const unsigned short DEFAULT_ALLOWED_INCOMING_CONNECTIONS=1024;
 	const unsigned short DEFAULT_ALLOWED_OUTGOING_CONNECTIONS=64;
+#ifdef _DEBUG
+	char *DEFAULT_DNS_HOST = "test.dnsalias.net";
+	char *DEFAULT_USERNAME_AND_PASSWORD = "test:test";
+	char *DEFAULT_SERVER_TO_SERVER_PASSWORD = "qwerty1234";
+#endif
 
 #ifndef _DEBUG
 	// Only allow insecure defaults for debugging
@@ -130,13 +154,34 @@ bool CloudServerHelper_DynDns::ParseCommandLineParameters(int argc, char **argv)
 #endif
 
 	if (argc<5) rakPeerPort=DEFAULT_SERVER_PORT;
-	else rakPeerPort=atoi(argv[4]);
+	else {
+		const int intPeerPort = atoi(argv[4]);
+		if ((intPeerPort < 0) || (intPeerPort > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified peer port %d is outside valid bounds [0, %u]", intPeerPort, std::numeric_limits<unsigned short>::max());
+			return false;
+		}
+		rakPeerPort = static_cast<unsigned short>(rakPeerPort);
+	}
 
 	if (argc<6) allowedIncomingConnections=DEFAULT_ALLOWED_INCOMING_CONNECTIONS;
-	else allowedIncomingConnections=atoi(argv[5]);
+	else {
+		const int intConnections = atoi(argv[5]);
+		if ((intConnections < 0) || (intConnections > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified allowed incoming connections %d is outside valid bounds [0, %u]", intConnections, std::numeric_limits<unsigned short>::max());
+			return false;
+		}
+		allowedIncomingConnections = static_cast<unsigned short>(intConnections);
+	}
 
 	if (argc<7) allowedOutgoingConnections=DEFAULT_ALLOWED_OUTGOING_CONNECTIONS;
-	else allowedOutgoingConnections=atoi(argv[6]);
+	else {
+		const int intConnections = atoi(argv[6]);
+		if ((intConnections < 0) || (intConnections > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified allowed outgoing connections %d is outside valid bounds [0, %u]", intConnections, std::numeric_limits<unsigned short>::max());
+			return false;
+		}
+		allowedOutgoingConnections = static_cast<unsigned short>(intConnections);
+	}
 
 	return true;
 }
@@ -238,19 +283,20 @@ bool CloudServerHelper_DynDns::SetHostDNSToThisSystemBlocking(void)
 		dynDNSUsernameAndPassword);
 
 	// Wait for the DNS update to complete
-	for(;;)
+	do
 	{
 		dynDNS->Update();
 
 		if (dynDNS->IsCompleted())
 		{
 			printf("%s\n", dynDNS->GetCompletedDescription());
-			return dynDNS->WasResultSuccessful();
+			break;
 		}
 
 		RakSleep(30);
-	}
-	return false;
+	} while (!dynDNS->IsCompleted());
+
+	return dynDNS->WasResultSuccessful();
 }
 
 MessageID CloudServerHelper::AuthenticateRemoteServerBlocking(RakPeerInterface *rakPeer, TwoWayAuthentication *twoWayAuthentication, RakNetGUID remoteSystem)
@@ -296,7 +342,7 @@ void CloudServerHelper::SetupPlugins(
 	SLNet::FullyConnectedMesh2 *fullyConnectedMesh2,
 	SLNet::TwoWayAuthentication *twoWayAuthentication,
 	SLNet::ConnectionGraph2 *connectionGraph2,
-	const char *serverToServerPassword
+	const char *newServerToServerPassword
 	)
 {
 	// unused parameters
@@ -308,7 +354,7 @@ void CloudServerHelper::SetupPlugins(
 	// Do not add to the host trracking system all connections, only those designated as servers
 	fullyConnectedMesh2->SetAutoparticipateConnections(false);
 	// Shared password
-	twoWayAuthentication->AddPassword("CloudServerHelperS2SPassword",serverToServerPassword);
+	twoWayAuthentication->AddPassword("CloudServerHelperS2SPassword", newServerToServerPassword);
 	// Do not add systems to the graph unless first validated as a server through the TwoWayAuthentication plugin
 	connectionGraph2->SetAutoProcessNewConnections(false);
 }

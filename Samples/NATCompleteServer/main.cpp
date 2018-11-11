@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/Kbhit.h"
 #include "slikenet/MessageIdentifiers.h"
 #include "slikenet/BitStream.h"
@@ -58,7 +59,7 @@ enum FeatureList
 	FEATURE_LIST_COUNT,
 };
 
-static int DEFAULT_RAKPEER_PORT=61111;
+static unsigned short DEFAULT_RAKPEER_PORT=61111;
 
 #define NatTypeDetectionServerFramework_Supported QUERY
 #define NatPunchthroughServerFramework_Supported QUERY
@@ -159,7 +160,7 @@ struct NatPunchthroughServerFramework : public SampleFramework, public NatPuncht
 };
 struct RelayPluginFramework : public SampleFramework
 {
-	RelayPluginFramework() {isSupported=RelayPlugin_Supported;}
+	RelayPluginFramework() {relayPlugin=nullptr;isSupported=RelayPlugin_Supported;}
 	virtual const char * QueryName(void) {return "RelayPlugin";}
 	virtual const char * QueryRequirements(void) {return "None.";}
 	virtual const char * QueryFunction(void) {return "Relays messages between named connections.";}
@@ -247,7 +248,7 @@ SystemAddress SelectAmongConnectedSystems(SLNet::RakPeerInterface *rakPeer, cons
 		char buff[64];
 		for (unsigned int i=0; i < addresses.Size(); i++)
 		{
-			addresses[i].ToString(true, buff, 64);
+			addresses[i].ToString(true, buff, static_cast<size_t>(64));
 			printf("%i. %s\n", i+1, buff);
 		}
 		Gets(buff,sizeof(buff));
@@ -267,6 +268,7 @@ SystemAddress SelectAmongConnectedSystems(SLNet::RakPeerInterface *rakPeer, cons
 };
 SystemAddress ConnectBlocking(SLNet::RakPeerInterface *rakPeer, const char *hostName)
 {
+	SystemAddress returnvalue = SLNet::UNASSIGNED_SYSTEM_ADDRESS;
 	char ipAddr[64];
 	printf("Enter IP of system %s is running on: ", hostName);
 	Gets(ipAddr,sizeof(ipAddr));
@@ -283,28 +285,29 @@ SystemAddress ConnectBlocking(SLNet::RakPeerInterface *rakPeer, const char *host
 		printf("Failed. Not connected to %s.\n", hostName);
 		return SLNet::UNASSIGNED_SYSTEM_ADDRESS;
 	}
-	if (rakPeer->Connect(ipAddr, atoi(port), 0, 0)!= SLNet::CONNECTION_ATTEMPT_STARTED)
+	const int intPort = atoi(port);
+	if ((intPort < 0) || (intPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Failed. Specified port %d is outside valid bounds [0, %u]", intPort, std::numeric_limits<unsigned short>::max());
+		return SLNet::UNASSIGNED_SYSTEM_ADDRESS;
+	}
+	if (rakPeer->Connect(ipAddr, static_cast<unsigned short>(intPort), 0, 0)!= SLNet::CONNECTION_ATTEMPT_STARTED)
 	{
 		printf("Failed connect call for %s.\n", hostName);
 		return SLNet::UNASSIGNED_SYSTEM_ADDRESS;
 	}
 	printf("Connecting...\n");
 	SLNet::Packet *packet;
-	for(;;)
-	{
-		for (packet=rakPeer->Receive(); packet; rakPeer->DeallocatePacket(packet), packet=rakPeer->Receive())
-		{
-			if (packet->data[0]==ID_CONNECTION_REQUEST_ACCEPTED)
-			{
-				return packet->systemAddress;
-			}
-			else
-			{
-				return SLNet::UNASSIGNED_SYSTEM_ADDRESS;
-			}
-			RakSleep(100);
-		}
-	}
+	// #med - review --- at least we'd add a sleep interval here - also review whether the behavior is correct to only check the very first received packet (old RakNet code was bogus in this regards)
+	do {
+		packet = rakPeer->Receive();
+	} while (packet == nullptr);
+
+	if (packet->data[0] == ID_CONNECTION_REQUEST_ACCEPTED)
+		returnvalue = packet->systemAddress;
+
+	rakPeer->DeallocatePacket(packet);
+
+	return returnvalue;
 }
 struct UDPProxyServerFramework : public SampleFramework, public UDPProxyServerResultHandler
 {
@@ -321,7 +324,7 @@ struct UDPProxyServerFramework : public SampleFramework, public UDPProxyServerRe
 			if (coordinatorAddress== SLNet::UNASSIGNED_SYSTEM_ADDRESS)
 			{
 				printf("Warning: RakPeer is not currently connected to any system.\nEnter option:\n(1). UDPProxyCoordinator is on localhost\n(2). Connect to a remote system\n(3). Fail.\nOption: ");
-				char ch=_getche();
+				int ch=_getche();
 				printf("\n");
 				if (ch=='1' || ch==13) // 13 is just pressing return
 				{
@@ -423,7 +426,7 @@ struct UDPProxyServerFramework : public SampleFramework, public UDPProxyServerRe
 };
 struct CloudServerFramework : public SampleFramework
 {
-	CloudServerFramework() {isSupported=CloudServerFramework_Supported;}
+	CloudServerFramework() {cloudServer=nullptr;isSupported=CloudServerFramework_Supported;}
 	virtual const char * QueryName(void) {return "CloudServer";}
 	virtual const char * QueryRequirements(void) {return "None.";}
 	virtual const char * QueryFunction(void) {return "Single instance cloud server that maintains connection counts\nUseful as a directory server to find other client instances.";}
@@ -503,7 +506,12 @@ int main(int argc, char **argv)
 	SLNet::SocketDescriptor sd[2];
 	if (argc>1)
 	{
-		DEFAULT_RAKPEER_PORT = atoi(argv[1]);
+		const int intPeerPort = atoi(argv[1]);
+		if ((intPeerPort < 0) || (intPeerPort > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified peer port %d is outside valid bounds [0, %u]", intPeerPort, std::numeric_limits<unsigned short>::max());
+			return 2;
+		}
+		DEFAULT_RAKPEER_PORT = static_cast<unsigned short>(intPeerPort);
 	}
 	
 	sd[0].port=DEFAULT_RAKPEER_PORT;
@@ -550,7 +558,7 @@ int main(int argc, char **argv)
 			}
 			printf("\n%s\nRequirements: %s\nDescription: %s\n", samples[i]->QueryName(), samples[i]->QueryRequirements(), samples[i]->QueryFunction());
 			printf("Support %s? (y/n): ", samples[i]->QueryName());
-			char supported=_getche();
+			int supported=_getche();
 			if (supported=='y' || supported=='Y' || supported==13) // 13 is just pressing return
 			{
 				samples[i]->isSupported=SUPPORTED;
@@ -573,7 +581,7 @@ int main(int argc, char **argv)
 				if (samples[i]->isSupported==QUERY)
 				{
 					printf(" Retry? (y/n): ");
-					char supported=_getche();
+					int supported=_getche();
 					if (supported=='y' || supported=='Y')
 					{
 						samples[i]->isSupported=SUPPORTED;
@@ -637,7 +645,7 @@ int main(int argc, char **argv)
 
 		if (_kbhit())
 		{
-			char ch = _getch();
+			int ch = _getch();
 			if (ch=='q')
 			{
 				quit=true;

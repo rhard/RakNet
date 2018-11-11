@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -44,7 +44,7 @@ int main(void)
 
 	text= new char [BIG_PACKET_SIZE];
 	quit=false;
-	char ch;
+	int ch;
 
 	printf("This is a test I use to test the packet splitting capabilities of RakNet\n");
 	printf("All it does is send a large block of data to the feedback loop\n");
@@ -77,7 +77,7 @@ int main(void)
 	}
 
 	// Test IPV6
-	int socketFamily;
+	short socketFamily;
 	socketFamily=AF_INET;
 	//socketFamily=AF_INET6;
 
@@ -125,10 +125,9 @@ int main(void)
 		rakPeer=server;
 	else
 		rakPeer=client;
-	unsigned int i;
-	for (i=0; i < rakPeer->GetNumberOfAddresses(); i++)
+	for (unsigned int i=0; i < rakPeer->GetNumberOfAddresses(); i++)
 	{
-		printf("%i. %s\n", i+1, rakPeer->GetLocalIP(i));
+		printf("%u. %s\n", i+1, rakPeer->GetLocalIP(i));
 	}
 
 
@@ -154,13 +153,13 @@ int main(void)
 				{
 					printf("Starting send\n");
 					start= SLNet::GetTimeMS();
-					if (BIG_PACKET_SIZE<=100000)
-					{
-						for (int i=0; i < BIG_PACKET_SIZE; i++)
-							text[i]=255-(i&255);
-					}
-					else
-						text[0]=(unsigned char) 255;
+					// #med - replace BIG_PACKET_SIZE macro with static const
+#if BIG_PACKET_SIZE <= 100000
+					for (int i=0; i < BIG_PACKET_SIZE; i++)
+						text[i]=255-(i&255);
+#else
+					text[0]=(unsigned char) 255;
+#endif
 					server->Send(text, BIG_PACKET_SIZE, LOW_PRIORITY, RELIABLE_ORDERED_WITH_ACK_RECEIPT, 0, packet->systemAddress, false);
 					// Keep the stat from updating until the messages move to the thread or it quits right away
 					nextStatTime= SLNet::GetTimeMS()+1000;
@@ -177,7 +176,7 @@ int main(void)
 
 			if (_kbhit())
 			{
-				char ch=_getch();
+				ch=_getch();
 				if (ch==' ')
 				{
 					printf("Sending medium priority message\n");
@@ -221,18 +220,18 @@ int main(void)
 						quit=true;
 						break;
 					}
-					if (BIG_PACKET_SIZE<=100000)
+					// #med - replace BIG_PACKET_SIZE macro with static const
+#if BIG_PACKET_SIZE <= 100000
+					for (int i=0; i < BIG_PACKET_SIZE; i++)
 					{
-						for (int i=0; i < BIG_PACKET_SIZE; i++)
+						if  (packet->data[i]!=255-(i&255))
 						{
-							if  (packet->data[i]!=255-(i&255))
-							{
-								printf("Test failed. %i bytes (bad data).\n", packet->length);
-								quit=true;
-								break;
-							}
+							printf("Test failed. %i bytes (bad data).\n", packet->length);
+							quit=true;
+							break;
 						}
 					}
+#endif
 
 					if (quit==false)
 					{
@@ -241,8 +240,8 @@ int main(void)
 						if (repeat)
 						{
 							printf("Rerequesting send.\n");
-							unsigned char ch=(unsigned char) 253;
-							client->Send((const char*) &ch, 1, MEDIUM_PRIORITY, RELIABLE_ORDERED, 1, SLNet::UNASSIGNED_SYSTEM_ADDRESS, true);
+							unsigned char ch2=(unsigned char) 253;
+							client->Send((const char*) &ch2, 1, MEDIUM_PRIORITY, RELIABLE_ORDERED, 1, SLNet::UNASSIGNED_SYSTEM_ADDRESS, true);
 						}
 						else
 						{
@@ -282,12 +281,11 @@ int main(void)
 			RakNetStatistics rssReceiver;
 			if (server)
 			{
-				unsigned int i;
 				unsigned short numSystems;
 				server->GetConnectionList(0,&numSystems);
 				if (numSystems>0)
 				{
-					for (i=0; i < numSystems; i++)
+					for (unsigned int i=0; i < numSystems; i++)
 					{
 						server->GetStatistics(server->GetSystemAddressFromIndex(i), &rssSender);
 						StatisticsToString(&rssSender, text, BIG_PACKET_SIZE, 2);

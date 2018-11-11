@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -18,6 +18,7 @@
 #include "slikenet/Kbhit.h"
 #include <string.h>
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/BitStream.h"
 #include "slikenet/MessageIdentifiers.h"
 #include "slikenet/Router2.h"
@@ -29,6 +30,7 @@
 #include "slikenet/Getche.h"
 #include "slikenet/Gets.h"
 #include "slikenet/linux_adapter.h"
+#include "slikenet/osx_adapter.h"
 
 using namespace SLNet;
 
@@ -45,7 +47,7 @@ void ReadAllPackets(void)
 	for (packet=rakPeer->Receive(); packet; rakPeer->DeallocatePacket(packet), packet=rakPeer->Receive())
 	{
 		packet->guid.ToString(str, 64);
-		packet->systemAddress.ToString(true,str2,64);
+		packet->systemAddress.ToString(true,str2,static_cast<size_t>(64));
 		if (packet->data[0]==ID_NEW_INCOMING_CONNECTION)
 		{
 			printf("ID_NEW_INCOMING_CONNECTION from %s on %s\n", str, str2);
@@ -75,7 +77,7 @@ void ReadAllPackets(void)
 			unsigned short sourceToDestPort;
 			bs.Read(sourceToDestPort);
 			char ipAddressString[32];
-			packet->systemAddress.ToString(false, ipAddressString,32);
+			packet->systemAddress.ToString(false, ipAddressString,static_cast<size_t>(32));
 			rakPeer->Connect(ipAddressString, sourceToDestPort, 0,0);
 		}
 		else if (packet->data[0]==ID_ROUTER_2_REROUTED)
@@ -91,9 +93,9 @@ void ReadAllPackets(void)
 			bs.Read(port);
 			intermediateAddress.SetPortHostOrder(port);
 
-			char str2[32];
-			intermediateAddress.ToString(true, str2,32);
-			printf("Connection to %s rerouted through %s\n", str, str2);
+			char str3[32];
+			intermediateAddress.ToString(true, str3, static_cast<size_t>(32));
+			printf("Connection to %s rerouted through %s\n", str, str3);
 
 			// Test sending a message to the endpoint
 			SLNet::BitStream bsOut;
@@ -141,7 +143,7 @@ int main(void)
 	{
 		if (_kbhit())
 		{
-			char ch=_getch();
+			int ch=_getch();
 			if (ch=='q')
 				break;
 			if (ch=='r')
@@ -162,14 +164,20 @@ int main(void)
 				Gets(str,sizeof(str));
 				if (str[0]==0)
 					strcpy_s(str, "127.0.0.1");
+				int intRemotePort = 0;
 				do
 				{
 					printf("Enter port to connect to: ");
 					Gets(str2,sizeof(str2));
-				} while (str2[0]==0);
+					intRemotePort = atoi(str2);
+					if ((intRemotePort < 0) || (intRemotePort > std::numeric_limits<unsigned short>::max())) {
+						printf("Specified remote port %d is outside valid bounds [0, %u]", intRemotePort, std::numeric_limits<unsigned short>::max());
+						intRemotePort = 0;
+					}
+				} while (intRemotePort == 0);
 
 				// Connect
-				rakPeer->Connect(str,atoi(str2),0,0);
+				rakPeer->Connect(str, static_cast<unsigned short>(intRemotePort),0,0);
 			}
 		}
 

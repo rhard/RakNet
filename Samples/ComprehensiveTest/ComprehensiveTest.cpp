@@ -43,9 +43,8 @@ using namespace SLNet;
 int main(void)
 {
 	RakPeerInterface *peers[NUM_PEERS];
-	int peerIndex;
+	unsigned short peerIndex;
 	float nextAction;
-	int i;
 
 	printf("This is just a test app to run a bit of everything to test for crashes.\n");
 	printf("Difficulty: Intermediate\n\n");
@@ -56,7 +55,7 @@ int main(void)
 	printf("Using seed %i\n", seed);
 	seedMT(seed);
 
-	for (i=0; i < NUM_PEERS; i++)
+	for (unsigned short i=0; i < NUM_PEERS; i++)
 	{
 		peers[i]= SLNet::RakPeerInterface::GetInstance();
 		peers[i]->SetMaximumIncomingConnections(CONNECTIONS_PER_SYSTEM);
@@ -65,7 +64,7 @@ int main(void)
 		peers[i]->SetOfflinePingResponse("Offline Ping Data", (int)strlen("Offline Ping Data")+1);
 	}
 
-	for (i=0; i < NUM_PEERS; i++)
+	for (unsigned short i=0; i < NUM_PEERS; i++)
 	{
 		peers[i]->Connect("127.0.0.1", 60000+(randomMT()%NUM_PEERS), 0, 0);		
 	}
@@ -106,7 +105,7 @@ int main(void)
 			{
 #ifdef _DO_PRINTF
 				printf("%i: ", 60000+numSystems);
-				for (i=0; i < numSystems; i++)
+				for (unsigned short i=0; i < numSystems; i++)
 				{
 					printf("%i: ", remoteSystems[i].GetPort());
 				}
@@ -131,6 +130,7 @@ int main(void)
 			priority=(PacketPriority)(randomMT()%(int)NUMBER_OF_PRIORITIES);
 			reliability=(PacketReliability)(randomMT()%((int)RELIABLE_SEQUENCED+1));
 			orderingChannel=randomMT()%32;
+			peerIndex = randomMT() % NUM_PEERS;
 			if ((randomMT()%NUM_PEERS)==0)
 				target= SLNet::UNASSIGNED_SYSTEM_ADDRESS;
 			else
@@ -141,7 +141,6 @@ int main(void)
 			broadcast=false; // Temporarily in so I can check recipients
 #endif
 
-			peerIndex=randomMT()%NUM_PEERS;
 			sprintf_s(data+3, 8093, "dataLength=%i priority=%i reliability=%i orderingChannel=%i target=%i broadcast=%i\n", dataLength, priority, reliability, orderingChannel, target.GetPort(), broadcast);
 			//unsigned short localPort=60000+i;
 #ifdef _VERIFY_RECIPIENTS
@@ -199,8 +198,8 @@ int main(void)
 		{
 			// Online Ping
 			SystemAddress target;
-			target=peers[peerIndex]->GetSystemAddressFromIndex(randomMT()%NUM_PEERS);
 			peerIndex=randomMT()%NUM_PEERS;
+			target=peers[peerIndex]->GetSystemAddressFromIndex(randomMT()%NUM_PEERS);
 			peers[peerIndex]->Ping(target);
 		}
 		else if (nextAction < .24f)
@@ -212,9 +211,9 @@ int main(void)
 			// GetStatistics
 			SystemAddress target, mySystemAddress;
 			RakNetStatistics *rss;
+			peerIndex=randomMT()%NUM_PEERS;
 			mySystemAddress=peers[peerIndex]->GetInternalID();
 			target=peers[peerIndex]->GetSystemAddressFromIndex(randomMT()%NUM_PEERS);
-			peerIndex=randomMT()%NUM_PEERS;
 			rss=peers[peerIndex]->GetStatistics(mySystemAddress);
 			if (rss)
 			{
@@ -234,7 +233,7 @@ int main(void)
 			}			
 		}
 
-		for (i=0; i < NUM_PEERS; i++)
+		for (unsigned short i=0; i < NUM_PEERS; i++)
             peers[i]->DeallocatePacket(peers[i]->Receive());
 
 #ifdef _WIN32
@@ -245,7 +244,7 @@ int main(void)
 	}
 
 
-	for (i=0; i < NUM_PEERS; i++)
+	for (unsigned short i=0; i < NUM_PEERS; i++)
 		SLNet::RakPeerInterface::DestroyInstance(peers[i]);
 
 	return 0;

@@ -45,6 +45,7 @@ struct CloudServerHelper
 {
 	char *serverToServerPassword;
 	unsigned short rakPeerPort;
+	// #med - consider changing to (unsigned?) int
 	unsigned short allowedIncomingConnections;
 	unsigned short allowedOutgoingConnections;
 
@@ -62,7 +63,7 @@ struct CloudServerHelper
 		SLNet::FullyConnectedMesh2 *fullyConnectedMesh2,
 		SLNet::TwoWayAuthentication *twoWayAuthentication,
 		SLNet::ConnectionGraph2 *connectionGraph2,
-		const char *serverToServerPassword
+		const char *newServerToServerPassword
 		);
 
 	int JoinCloud(

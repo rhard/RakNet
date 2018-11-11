@@ -77,7 +77,7 @@ struct SampleReplica : public Replica3
 	}
 
 	virtual void SerializeConstruction(SLNet::BitStream *constructionBitstream, SLNet::Connection_RM3 *destinationConnection)
-	{	
+	{
 		// variableDeltaSerializer is a helper class that tracks what variables were sent to what remote system
 		// This call adds another remote system to track
 		variableDeltaSerializer.AddRemoteSystemVariableHistory(destinationConnection->GetRakNetGUID());
@@ -93,12 +93,12 @@ struct SampleReplica : public Replica3
 		return true;
 	}
 	virtual void SerializeDestruction(SLNet::BitStream *destructionBitstream, SLNet::Connection_RM3 *destinationConnection)
-	{	
+	{
 		// variableDeltaSerializer is a helper class that tracks what variables were sent to what remote system
 		// This call removes a remote system
 		variableDeltaSerializer.RemoveRemoteSystemVariableHistory(destinationConnection->GetRakNetGUID());
 
-		destructionBitstream->Write(GetName() + SLNet::RakString(" SerializeDestruction"));	
+		destructionBitstream->Write(GetName() + SLNet::RakString(" SerializeDestruction"));
 	}
 	virtual bool DeserializeDestruction(SLNet::BitStream *destructionBitstream, SLNet::Connection_RM3 *sourceConnection)
 	{
@@ -462,11 +462,11 @@ class ReplicaManager3Sample : public ReplicaManager3
 
 int main(void)
 {
-	char ch;
+	int ch;
 	SLNet::SocketDescriptor sd;
 	sd.socketFamily=AF_INET; // Only IPV4 supports broadcast on 255.255.255.255
 	char ip[128];
-	static const int SERVER_PORT=12345;
+	static const unsigned short SERVER_PORT=12345;
 
 
 	// ReplicaManager3 requires NetworkIDManager to lookup pointers from numbers.
@@ -630,7 +630,7 @@ int main(void)
 		}
 
 		RakSleep(30);
-		for (int i=0; i < 4; i++)
+		for (unsigned short i=0; i < 4; i++)
 		{
 			if (rakPeer->GetInternalID(SLNet::UNASSIGNED_SYSTEM_ADDRESS,0).GetPort()!=SERVER_PORT+i)
 				rakPeer->AdvertiseSystem("255.255.255.255", SERVER_PORT+i, 0,0,0);

@@ -16,6 +16,7 @@
 // Common includes
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/Kbhit.h"
 
 #include "slikenet/GetTime.h"
@@ -139,9 +140,9 @@ public:
 			}
 			if (error!=0)
 			{
-				char buff[1024];
-				strerror_s(buff, errno);
-				printf("\nERROR: Could not open %s.\nerr=%i (%s)\narguments=%s\n", pathToPatch2, errno, buff, commandLine);
+				char buff2[1024];
+				strerror_s(buff2, errno);
+				printf("\nERROR: Could not open %s.\nerr=%i (%s)\narguments=%s\n", pathToPatch2, errno, buff2, commandLine);
 				return PC_ERROR_PATCH_TARGET_MISSING;
 			}
 		
@@ -164,14 +165,14 @@ public:
 			}
 
 			if (unlinkRes1!=0) {
-				char buff[1024];
-				strerror_s(buff, errno);
-				printf("\nWARNING: unlink %s failed.\nerr=%i (%s)\n", pathToPatch1, errno, buff);
+				char buff2[1024];
+				strerror_s(buff2, errno);
+				printf("\nWARNING: unlink %s failed.\nerr=%i (%s)\n", pathToPatch1, errno, buff2);
 			}
 			if (unlinkRes2!=0) {
-				char buff[1024];
-				strerror_s(buff, errno);
-				printf("\nWARNING: unlink %s failed.\nerr=%i (%s)\n", pathToPatch2, errno, buff);
+				char buff2[1024];
+				strerror_s(buff2, errno);
+				printf("\nWARNING: unlink %s failed.\nerr=%i (%s)\n", pathToPatch2, errno, buff2);
 			}
 
 			return PC_WRITE_FILE;
@@ -196,7 +197,12 @@ int main(int argc, char **argv)
 	unsigned short localPort=0;
 	if (argc>=6)
 	{
-		localPort=atoi(argv[5]);
+		const int intLocalPort = atoi(argv[5]);
+		if ((intLocalPort < 0) || (intLocalPort > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified local port %d is outside valid bounds [0, %u]", intLocalPort, std::numeric_limits<unsigned short>::max());
+			return 2;
+		}
+		localPort = static_cast<unsigned short>(intLocalPort);
 	}
 #ifdef USE_TCP
 	SLNet::PacketizedTCP packetizedTCP;
@@ -285,7 +291,7 @@ int main(int argc, char **argv)
 	else
 		printf("Hit 'q' to quit, 'c' to cancel the patch.\n");
 
-	char ch;
+	int ch;
 	SLNet::Packet *p;
 	for(;;)
 	{
@@ -310,12 +316,12 @@ int main(int argc, char **argv)
 		{
 			if (p->data[0]==ID_AUTOPATCHER_REPOSITORY_FATAL_ERROR)
 			{
-				char buff[256];
+				char buff2[256];
 				SLNet::BitStream temp(p->data, p->length, false);
 				temp.IgnoreBits(8);
-				SLNet::StringCompressor::Instance()->DecodeString(buff, 256, &temp);
+				SLNet::StringCompressor::Instance()->DecodeString(buff2, 256, &temp);
 				printf("ID_AUTOPATCHER_REPOSITORY_FATAL_ERROR\n");
-				printf("%s\n", buff);
+				printf("%s\n", buff2);
 			}
 			else if (p->data[0]==ID_AUTOPATCHER_CANNOT_DOWNLOAD_ORIGINAL_UNMODIFIED_FILES)
 			{

@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/Kbhit.h"
 #include "slikenet/MessageIdentifiers.h"
 #include "slikenet/BitStream.h"
@@ -30,6 +31,8 @@
 #include "slikenet/UDPProxyClient.h"
 #include "slikenet/Gets.h"
 #include "slikenet/Itoa.h"
+#include "slikenet/linux_adapter.h"
+#include "slikenet/osx_adapter.h"
 
 // To include miniupnp, see Samples\NATCompleteClient\readme.txt
 #include "miniupnpc.h"
@@ -86,7 +89,7 @@ SystemAddress SelectAmongConnectedSystems(SLNet::RakPeerInterface *rakPeer, cons
 		char buff[64];
 		for (unsigned int i=0; i < addresses.Size(); i++)
 		{
-			addresses[i].ToString(true, buff, 64);
+			addresses[i].ToString(true, buff, static_cast<size_t>(64));
 			printf("%i. %s\n", i+1, buff);
 		}
 		Gets(buff,sizeof(buff));
@@ -106,6 +109,7 @@ SystemAddress SelectAmongConnectedSystems(SLNet::RakPeerInterface *rakPeer, cons
 };
 SystemAddress ConnectBlocking(SLNet::RakPeerInterface *rakPeer, const char *hostName, const char *defaultAddress, const char *defaultPort)
 {
+	SystemAddress returnvalue = SLNet::UNASSIGNED_SYSTEM_ADDRESS;
 	char ipAddr[64];
 	if (defaultAddress==0 || defaultAddress[0]==0)
 		printf("Enter IP of system %s is running on: ", hostName);
@@ -142,33 +146,31 @@ SystemAddress ConnectBlocking(SLNet::RakPeerInterface *rakPeer, const char *host
 			strcpy_s(port, defaultPort);
 		}
 	}
-	if (rakPeer->Connect(ipAddr, atoi(port), 0, 0)!= SLNet::CONNECTION_ATTEMPT_STARTED)
+	const int intPort = atoi(port);
+	if ((intPort < 0) || (intPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Failed. Specified port %d is outside valid bounds [0, %u]", intPort, std::numeric_limits<unsigned short>::max());
+		return SLNet::UNASSIGNED_SYSTEM_ADDRESS;
+	}
+	if (rakPeer->Connect(ipAddr, static_cast<unsigned short>(intPort), 0, 0)!= SLNet::CONNECTION_ATTEMPT_STARTED)
 	{
 		printf("Failed connect call for %s.\n", hostName);
 		return SLNet::UNASSIGNED_SYSTEM_ADDRESS;
 	}
 	printf("Connecting...\n");
 	SLNet::Packet *packet;
-	for(;;)
-	{
-		for (packet=rakPeer->Receive(); packet; rakPeer->DeallocatePacket(packet), packet=rakPeer->Receive())
-		{
-			if (packet->data[0]==ID_CONNECTION_REQUEST_ACCEPTED)
-			{
-				return packet->systemAddress;
-			}
-			else if (packet->data[0]==ID_NO_FREE_INCOMING_CONNECTIONS)
-			{
-				printf("ID_NO_FREE_INCOMING_CONNECTIONS");
-				return SLNet::UNASSIGNED_SYSTEM_ADDRESS;
-			}
-			else
-			{
-				return SLNet::UNASSIGNED_SYSTEM_ADDRESS;
-			}
-			RakSleep(100);
-		}
-	}
+	// #med - review --- at least we'd add a sleep interval here - also review whether the behavior is correct to only check the very first received packet (old RakNet code was bogus in this regards)
+	do {
+		packet = rakPeer->Receive();
+	} while (packet == nullptr);
+
+	if (packet->data[0] == ID_CONNECTION_REQUEST_ACCEPTED)
+		returnvalue = packet->systemAddress;
+	else if (packet->data[0] == ID_NO_FREE_INCOMING_CONNECTIONS)
+		printf("ID_NO_FREE_INCOMING_CONNECTIONS");
+
+	rakPeer->DeallocatePacket(packet);
+
+	return returnvalue;
 }
 struct UPNPFramework : public SampleFramework
 {
@@ -452,8 +454,7 @@ struct NatPunchthoughClientFramework : public SampleFramework, public NatPunchth
 			{
 				SLNet::BitStream bs(packet->data,packet->length,false);
 				bs.IgnoreBytes(1);
-				bool b = bs.Read(guid);
-				RakAssert(b);
+				SLNET_VERIFY(bs.Read(guid));
 			}
 
 			switch (packet->data[0])
@@ -692,24 +693,23 @@ struct UDPProxyClientFramework : public SampleFramework, public UDPProxyClientRe
 		SystemAddress proxyCoordinator, SystemAddress sourceAddress, SystemAddress targetAddress, RakNetGUID targetGuid, SLNet::UDPProxyClient *proxyClientPlugin)
 	{
 		// unused parameters
-		(void)targetGuid;
-		(void)sourceAddress;
 		(void)proxyCoordinator;
+		(void)sourceAddress;
+		(void)targetGuid;
 
 		printf("Datagrams forwarded by proxy %s:%i to target %s.\n", proxyIPAddress, proxyPort, targetAddress.ToString(false));
 		printf("Connecting to proxy, which will be received by target.\n");
-		ConnectionAttemptResult car = proxyClientPlugin->GetRakPeerInterface()->Connect(proxyIPAddress, proxyPort, 0, 0);
-		RakAssert(car==CONNECTION_ATTEMPT_STARTED);
+		SLNET_VERIFY(proxyClientPlugin->GetRakPeerInterface()->Connect(proxyIPAddress, proxyPort, 0, 0) == CONNECTION_ATTEMPT_STARTED);
 		sampleResult=SUCCEEDED;
 	}
 	virtual void OnForwardingNotification(const char *proxyIPAddress, unsigned short proxyPort,
 		SystemAddress proxyCoordinator, SystemAddress sourceAddress, SystemAddress targetAddress, RakNetGUID targetGuid, SLNet::UDPProxyClient *proxyClientPlugin)
 	{
 		// unused parameters
-		(void)proxyClientPlugin;
-		(void)targetGuid;
-		(void)targetAddress;
 		(void)proxyCoordinator;
+		(void)targetAddress;
+		(void)targetGuid;
+		(void)proxyClientPlugin;
 
 		printf("Source %s has setup forwarding to us through proxy %s:%i.\n", sourceAddress.ToString(false), proxyIPAddress, proxyPort);
 
@@ -718,11 +718,11 @@ struct UDPProxyClientFramework : public SampleFramework, public UDPProxyClientRe
 	virtual void OnNoServersOnline(SystemAddress proxyCoordinator, SystemAddress sourceAddress, SystemAddress targetAddress, RakNetGUID targetGuid, SLNet::UDPProxyClient *proxyClientPlugin)
 	{
 		// unused parameters
-		(void)proxyClientPlugin;
-		(void)targetGuid;
-		(void)targetAddress;
-		(void)sourceAddress;
 		(void)proxyCoordinator;
+		(void)sourceAddress;
+		(void)targetAddress;
+		(void)targetGuid;
+		(void)proxyClientPlugin;
 
 		printf("Failure: No servers logged into coordinator.\n");
 		sampleResult=FAILED;
@@ -730,11 +730,11 @@ struct UDPProxyClientFramework : public SampleFramework, public UDPProxyClientRe
 	virtual void OnRecipientNotConnected(SystemAddress proxyCoordinator, SystemAddress sourceAddress, SystemAddress targetAddress, RakNetGUID targetGuid, SLNet::UDPProxyClient *proxyClientPlugin)
 	{
 		// unused parameters
-		(void)proxyClientPlugin;
-		(void)targetGuid;
-		(void)targetAddress;
-		(void)sourceAddress;
 		(void)proxyCoordinator;
+		(void)sourceAddress;
+		(void)targetAddress;
+		(void)targetGuid;
+		(void)proxyClientPlugin;
 
 		printf("Failure: Recipient not connected to coordinator.\n");
 		sampleResult=FAILED;
@@ -742,11 +742,11 @@ struct UDPProxyClientFramework : public SampleFramework, public UDPProxyClientRe
 	virtual void OnAllServersBusy(SystemAddress proxyCoordinator, SystemAddress sourceAddress, SystemAddress targetAddress, RakNetGUID targetGuid, SLNet::UDPProxyClient *proxyClientPlugin)
 	{
 		// unused parameters
-		(void)proxyClientPlugin;
-		(void)targetGuid;
-		(void)targetAddress;
-		(void)sourceAddress;
 		(void)proxyCoordinator;
+		(void)sourceAddress;
+		(void)targetAddress;
+		(void)targetGuid;
+		(void)proxyClientPlugin;
 
 		printf("Failure: No servers have available forwarding ports.\n");
 		sampleResult=FAILED;
@@ -754,13 +754,13 @@ struct UDPProxyClientFramework : public SampleFramework, public UDPProxyClientRe
 	virtual void OnForwardingInProgress(const char *proxyIPAddress, unsigned short proxyPort, SystemAddress proxyCoordinator, SystemAddress sourceAddress, SystemAddress targetAddress, RakNetGUID targetGuid, SLNet::UDPProxyClient *proxyClientPlugin)
 	{
 		// unused parameters
-		(void)proxyClientPlugin;
-		(void)targetGuid;
-		(void)targetAddress;
-		(void)sourceAddress;
-		(void)proxyCoordinator;
-		(void)proxyPort;
 		(void)proxyIPAddress;
+		(void)proxyPort;
+		(void)proxyCoordinator;
+		(void)sourceAddress;
+		(void)targetAddress;
+		(void)targetGuid;
+		(void)proxyClientPlugin;
 
 		printf("Notification: Forwarding already in progress.\n");
 	}
@@ -839,8 +839,14 @@ int main(void)
 	char buff[64];
 	Gets(buff,sizeof(buff));
 	unsigned short port = DEFAULT_RAKPEER_PORT;
-	if (buff[0]!=0)
-		port = atoi(buff);
+	if (buff[0]!=0) {
+		const int intLocalPort = atoi(buff);
+		if ((intLocalPort < 0) || (intLocalPort > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified local port %d is outside valid bounds [0, %u]", intLocalPort, std::numeric_limits<unsigned short>::max());
+			return 2;
+		}
+		port = static_cast<unsigned short>(intLocalPort);
+	}
 	SLNet::SocketDescriptor sd(port,0);
 	if (rakPeer->Startup(32,&sd,1)!= SLNet::RAKNET_STARTED)
 	{
@@ -873,7 +879,7 @@ int main(void)
 
 	printf("\nDo you have a server running the NATCompleteServer project? (y/n): ");
 
-	char responseLetter=_getche();
+	int responseLetter=_getche();
 	bool hasServer=responseLetter=='y' || responseLetter=='Y' || responseLetter==' ';
 	printf("\n");
 	if (hasServer==false)
@@ -898,7 +904,8 @@ int main(void)
 		}
 	}
 
-	for(;;)
+	bool running = true;
+	while(running)
 	{
 		printf("Executing %s\n", samples[(int) currentStage]->QueryName());
 		samples[(int) currentStage]->Init(rakPeer);
@@ -935,8 +942,8 @@ int main(void)
 						printf("Connectivity not possible. Exiting\n");
 						rakPeer->Shutdown(100);
 						SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-						_getch();
-						return 1;
+						running = false;
+						break;
 					}
 					else
 					{
@@ -970,8 +977,8 @@ int main(void)
 						printf("Press enter to quit.\n");
 						char temp[32];
 						Gets(temp,sizeof(temp));
-						_getch();
-						return 1;
+						running = false;
+						break;
 					}
 
 					printf("Proceeding to next stage.\n");
@@ -1001,8 +1008,8 @@ int main(void)
 
 						rakPeer->Shutdown(100);
 						SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-						_getch();
-						return 1;
+						running = false;
+						break;
 					}
 					break;
 				}
@@ -1013,5 +1020,5 @@ int main(void)
 	}
 
 	_getch();
-	return 0;
+	return 1;
 }

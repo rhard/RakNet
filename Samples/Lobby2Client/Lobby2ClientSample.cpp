@@ -24,6 +24,7 @@
 #include "slikenet/DS_Queue.h"
 #include <ctype.h>
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/LinuxStrings.h"
 #include "slikenet/Gets.h"
 #include "slikenet/linux_adapter.h"
@@ -43,12 +44,12 @@ struct AutoExecutionPlanNode
 };
 DataStructures::Queue<AutoExecutionPlanNode> executionPlan;
 
-void PrintCommands(SLNet::Lobby2MessageFactory *messageFactory)
+void PrintCommands()
 {
 	unsigned int i;
 	for (i=0; i < SLNet::L2MID_COUNT; i++)
 	{
-		SLNet::Lobby2Message *m = messageFactory->Alloc((SLNet::Lobby2MessageID)i);
+		SLNet::Lobby2Message *m = messageFactory.Alloc((SLNet::Lobby2MessageID)i);
 		if (m)
 		{
 			printf("%i. %s", i+1, m->GetName());
@@ -57,7 +58,7 @@ void PrintCommands(SLNet::Lobby2MessageFactory *messageFactory)
 			if (m->RequiresRankingPermission())
 				printf(" (Ranking server command)");
 			printf("\n");
-			messageFactory->Dealloc(m);
+			messageFactory.Dealloc(m);
 		}		
 		
 	}
@@ -191,7 +192,12 @@ int main()
 		rakPeer[i]= SLNet::RakPeerInterface::GetInstance();
 	puts("Enter the rakPeer1 port to listen on");
 	clientPort[0]=0;
-	SLNet::SocketDescriptor socketDescriptor(atoi(clientPort),0);
+	const int intClientPort = atoi(clientPort);
+	if ((intClientPort < 0) || (intClientPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Specified client port %d is outside valid bounds [0, %u]", intClientPort, std::numeric_limits<unsigned short>::max());
+		return 1;
+	}
+	SLNet::SocketDescriptor socketDescriptor(static_cast<unsigned short>(intClientPort),0);
 	Gets(clientPort,sizeof(clientPort));
 	if (clientPort[0]==0)
 		strcpy_s(clientPort, "0");
@@ -207,11 +213,16 @@ int main()
 	Gets(serverPort,sizeof(serverPort));
 	if (serverPort[0]==0)
 		strcpy_s(serverPort, "61111");
+	const int intServerPort = atoi(serverPort);
+	if ((intServerPort < 0) || (intServerPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Specified server port %d is outside valid bounds [0, %u]", intServerPort, std::numeric_limits<unsigned short>::max());
+		return 2;
+	}
 
 	for (i=0; i < NUM_CONNECTIONS; i++)
 	{
 		rakPeer[i]->Startup(1,&socketDescriptor, 1);
-		rakPeer[i]->Connect(ip, atoi(serverPort), 0,0);
+		rakPeer[i]->Connect(ip, static_cast<unsigned short>(intServerPort), 0,0);
 
 		rakPeer[i]->AttachPlugin(&lobby2Client[i]);
 		lobby2Client[i].SetMessageFactory(&messageFactory);
@@ -265,7 +276,7 @@ int main()
 						lobby2Client[j].SetServerAddress(packet->systemAddress);
 					if (i==NUM_CONNECTIONS-1)
 					{
-						PrintCommands(&messageFactory);
+						PrintCommands();
 						printf("Enter instance number 1 to %i followed by command number.\n", NUM_CONNECTIONS);
 
 						if (executionPlan.Size())
@@ -303,7 +314,7 @@ int main()
 
 		if (_kbhit())
 		{
-			char ch = _getch();
+			int ch = _getch();
 			if (ch <= '0' || ch > '9')
 			{
 				printf("Bad instance number\n");
@@ -330,7 +341,7 @@ int main()
 				if (command <=0 || command > SLNet::L2MID_COUNT)
 				{
 					printf("Invalid message index %i. Commands:\n", command);
-					PrintCommands(&messageFactory);
+					PrintCommands();
 				}
 				else
 				{
@@ -530,13 +541,15 @@ void ExecuteCommand(SLNet::Lobby2MessageID command, SLNet::RakString userName, i
 
 	case SLNet::L2MID_Client_UpdateAccount:
 		{
-			SLNet::Client_UpdateAccount *arg = (SLNet::Client_UpdateAccount *) m;
+			// provided for documentation purposes only
+			// SLNet::Client_UpdateAccount *arg = (SLNet::Client_UpdateAccount *) m;
 		}
 		break;
 
 	case SLNet::L2MID_Client_GetAccountDetails:
 		{
-			SLNet::Client_GetAccountDetails *arg = (SLNet::Client_GetAccountDetails *) m;
+			// provided for documentation purposes only
+			// SLNet::Client_GetAccountDetails *arg = (SLNet::Client_GetAccountDetails *) m;
 		}
 		break;
 
@@ -556,7 +569,8 @@ void ExecuteCommand(SLNet::Lobby2MessageID command, SLNet::RakString userName, i
 
 	case SLNet::L2MID_Client_GetIgnoreList:
 		{
-		SLNet::Client_GetIgnoreList *arg = (SLNet::Client_GetIgnoreList *) m;
+			// provided for documentation purposes only
+			// SLNet::Client_GetIgnoreList *arg = (SLNet::Client_GetIgnoreList *) m;
 		}
 		break;
 
@@ -607,13 +621,15 @@ void ExecuteCommand(SLNet::Lobby2MessageID command, SLNet::RakString userName, i
 
 	case SLNet::L2MID_Friends_GetInvites:
 		{
-		SLNet::Friends_GetInvites *arg = (SLNet::Friends_GetInvites *) m;
+			// provided for documentation purposes only
+			// SLNet::Friends_GetInvites *arg = (SLNet::Friends_GetInvites *) m;
 		}
 		break;
 
 	case SLNet::L2MID_Friends_GetFriends:
 		{
-		SLNet::Friends_GetFriends *arg = (SLNet::Friends_GetFriends *) m;
+			// provided for documentation purposes only
+			// SLNet::Friends_GetFriends *arg = (SLNet::Friends_GetFriends *) m;
 		}
 		break;
 
@@ -644,7 +660,8 @@ void ExecuteCommand(SLNet::Lobby2MessageID command, SLNet::RakString userName, i
 		break;
 	case SLNet::L2MID_BookmarkedUsers_Get:
 		{
-		SLNet::BookmarkedUsers_Get *arg = (SLNet::BookmarkedUsers_Get *) m;
+			// provided for documentation purposes only
+			// SLNet::BookmarkedUsers_Get *arg = (SLNet::BookmarkedUsers_Get *) m;
 		}
 		break;
 
@@ -863,7 +880,8 @@ void ExecuteCommand(SLNet::Lobby2MessageID command, SLNet::RakString userName, i
 
 	case SLNet::L2MID_Clans_Get:
 		{
-		SLNet::Clans_Get *arg = (SLNet::Clans_Get *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_Get *arg = (SLNet::Clans_Get *) m;
 		}
 		break;
 
@@ -907,7 +925,8 @@ void ExecuteCommand(SLNet::Lobby2MessageID command, SLNet::RakString userName, i
 
 	case SLNet::L2MID_Clans_DownloadInvitationList:
 		{
-		SLNet::Clans_DownloadInvitationList *arg = (SLNet::Clans_DownloadInvitationList *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_DownloadInvitationList *arg = (SLNet::Clans_DownloadInvitationList *) m;
 		}
 		break;
 
@@ -946,7 +965,8 @@ void ExecuteCommand(SLNet::Lobby2MessageID command, SLNet::RakString userName, i
 
 	case SLNet::L2MID_Clans_DownloadRequestList:
 		{
-		SLNet::Clans_DownloadRequestList *arg = (SLNet::Clans_DownloadRequestList *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_DownloadRequestList *arg = (SLNet::Clans_DownloadRequestList *) m;
 		}
 		break;
 
@@ -984,49 +1004,57 @@ void ExecuteCommand(SLNet::Lobby2MessageID command, SLNet::RakString userName, i
 
 	case SLNet::L2MID_Clans_CreateBoard:
 		{
-		SLNet::Clans_CreateBoard *arg = (SLNet::Clans_CreateBoard *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_CreateBoard *arg = (SLNet::Clans_CreateBoard *) m;
 		}
 		break;
 
 	case SLNet::L2MID_Clans_DestroyBoard:
 		{
-		SLNet::Clans_DestroyBoard *arg = (SLNet::Clans_DestroyBoard *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_DestroyBoard *arg = (SLNet::Clans_DestroyBoard *) m;
 		}
 		break;
 
 	case SLNet::L2MID_Clans_CreateNewTopic:
 		{
-		SLNet::Clans_CreateNewTopic *arg = (SLNet::Clans_CreateNewTopic *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_CreateNewTopic *arg = (SLNet::Clans_CreateNewTopic *) m;
 		}
 		break;
 
 	case SLNet::L2MID_Clans_ReplyToTopic:
 		{
-		SLNet::Clans_ReplyToTopic *arg = (SLNet::Clans_ReplyToTopic *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_ReplyToTopic *arg = (SLNet::Clans_ReplyToTopic *) m;
 		}
 		break;
 
 	case SLNet::L2MID_Clans_RemovePost:
 		{
-		SLNet::Clans_RemovePost *arg = (SLNet::Clans_RemovePost *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_RemovePost *arg = (SLNet::Clans_RemovePost *) m;
 		}
 		break;
 
 	case SLNet::L2MID_Clans_GetBoards:
 		{
-		SLNet::Clans_GetBoards *arg = (SLNet::Clans_GetBoards *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_GetBoards *arg = (SLNet::Clans_GetBoards *) m;
 		}
 		break;
 
 	case SLNet::L2MID_Clans_GetTopics:
 		{
-		SLNet::Clans_GetTopics *arg = (SLNet::Clans_GetTopics *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_GetTopics *arg = (SLNet::Clans_GetTopics *) m;
 		}
 		break;
 
 	case SLNet::L2MID_Clans_GetPosts:
 		{
-		SLNet::Clans_GetPosts *arg = (SLNet::Clans_GetPosts *) m;
+			// provided for documentation purposes only
+			// SLNet::Clans_GetPosts *arg = (SLNet::Clans_GetPosts *) m;
 		}
 		break;
 	}

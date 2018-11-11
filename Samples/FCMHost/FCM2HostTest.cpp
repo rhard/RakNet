@@ -46,8 +46,7 @@ int main()
 	sd.port=60000;
 	while (IRNS2_Berkley::IsPortInUse(sd.port, sd.hostAddress, sd.socketFamily, SOCK_DGRAM)==true)
 		sd.port++;
-	StartupResult sr = rakPeer->Startup(8,&sd,1);
-	RakAssert(sr==RAKNET_STARTED);
+	SLNET_VERIFY(rakPeer->Startup(8, &sd, 1) == RAKNET_STARTED);
 	rakPeer->SetMaximumIncomingConnections(8);
 	rakPeer->SetTimeoutTime(1000, SLNet::UNASSIGNED_SYSTEM_ADDRESS);
 	printf("Our guid is %s\n", rakPeer->GetGuidFromSystemAddress(SLNet::UNASSIGNED_SYSTEM_ADDRESS).ToString());
@@ -62,7 +61,7 @@ int main()
 
 	bool quit=false;
 	SLNet::Packet *packet;
-	char ch;
+	int ch;
 	while (!quit)
 	{
 		for (packet = rakPeer->Receive(); packet; rakPeer->DeallocatePacket(packet), packet = rakPeer->Receive())
@@ -162,7 +161,7 @@ int main()
 		}
 
 		RakSleep(30);
-		for (int i=0; i < 32; i++)
+		for (unsigned short i=0; i < 32; i++)
 		{
 			if (rakPeer->GetInternalID(SLNet::UNASSIGNED_SYSTEM_ADDRESS,0).GetPort()!=60000+i)
 				rakPeer->AdvertiseSystem("255.255.255.255", 60000+i, 0,0,0);

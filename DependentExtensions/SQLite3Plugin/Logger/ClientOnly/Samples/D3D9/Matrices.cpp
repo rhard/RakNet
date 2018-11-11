@@ -178,8 +178,8 @@ VOID SetupMatrices()
     // every 1000 ms. To avoid the loss of precision inherent in very high 
     // floating point numbers, the system time is modulated by the rotation 
     // period before conversion to a radian angle.
-    UINT iTime = timeGetTime() % 1000;
-    FLOAT fAngle = iTime * ( 2.0f * D3DX_PI ) / 1000.0f;
+//    UINT iTime = timeGetTime() % 1000;
+//    FLOAT fAngle = iTime * ( 2.0f * D3DX_PI ) / 1000.0f;
 //     D3DXMatrixRotationY( &matWorld, fAngle );
 //     g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorld );
 
@@ -286,7 +286,7 @@ INT WINAPI wWinMain( HINSTANCE hInst, HINSTANCE, LPWSTR, INT )
                               NULL, NULL, hInst, NULL );
 	
 	DWORD timeSinceLastLog, timeSinceLastTick, lastLogTime=0;
-	float lastFps;
+	float lastFps = 0.f; // unnecessary assignment - added to workaround false-positive of C4701
 	timeSinceLastTick=0;
 	
     // Initialize Direct3D

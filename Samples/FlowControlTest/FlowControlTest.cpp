@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -21,26 +21,22 @@
 #include <memory.h>
 #include <cstring>
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/Gets.h"
+#include "slikenet/Kbhit.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
 
 using namespace SLNet;
 
-#ifdef WIN32
-#include "slikenet/Kbhit.h"
-#else
-#include "slikenet/Kbhit.h"
-#endif
-
 int main(void)
 {
 	RakPeerInterface *rakServer;
 	RakPeerInterface *rakClient;
-	char ch;
+	int ch;
 	char str[255], remoteIP[255];
 	char randomData[8192];
-	int localPort, remotePort;
+	unsigned short localPort, remotePort;
 	int packetSize;
 	int sendinterval;
 	SLNet::TimeMS time;
@@ -86,7 +82,14 @@ int main(void)
 			localPort=0;
 	}
 	else
-		localPort=atoi(str);
+	{
+		const int intLocalPort = atoi(str);
+		if ((intLocalPort < 0) || (intLocalPort > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified local port %d is outside valid bounds [0, %u]", intLocalPort, std::numeric_limits<unsigned short>::max());
+			return 2;
+		}
+		localPort = static_cast<unsigned short>(intLocalPort);
+	}
 
 	if (rakServer)
 	{
@@ -105,7 +108,14 @@ int main(void)
 		if (str[0]==0)
 			remotePort=60000;
 		else
-			remotePort=atoi(str);
+		{
+			const int intRemotePort = atoi(str);
+			if ((intRemotePort < 0) || (intRemotePort > std::numeric_limits<unsigned short>::max())) {
+				printf("Specified remote port %d is outside valid bounds [0, %u]", intRemotePort, std::numeric_limits<unsigned short>::max());
+				return 3;
+			}
+			remotePort = static_cast<unsigned short>(intRemotePort);
+		}
 		SLNet::SocketDescriptor socketDescriptor(localPort,0);
 		rakClient->Startup(1, &socketDescriptor, 1);
 		rakClient->Connect(remoteIP, remotePort, 0, 0);

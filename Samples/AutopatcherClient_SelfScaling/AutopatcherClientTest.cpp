@@ -24,6 +24,7 @@
 // Common includes
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/Kbhit.h"
 
 #include "slikenet/GetTime.h"
@@ -158,9 +159,9 @@ public:
 			}
 			if (error!=0)
 			{
-				char buff[1024];
-				strerror_s(buff, errno);
-				printf("\nERROR: Could not open %s.\nerr=%i (%s)\narguments=%s\n", pathToPatch2, errno, buff, commandLine);
+				char buff2[1024];
+				strerror_s(buff2, errno);
+				printf("\nERROR: Could not open %s.\nerr=%i (%s)\narguments=%s\n", pathToPatch2, errno, buff2, commandLine);
 				return PC_ERROR_PATCH_TARGET_MISSING;
 			}
 
@@ -183,14 +184,14 @@ public:
 			}
 
 			if (unlinkRes1!=0) {
-				char buff[1024];
-				strerror_s(buff, errno);
-				printf("\nWARNING: unlink %s failed.\nerr=%i (%s)\n", pathToPatch1, errno, buff);
+				char buff2[1024];
+				strerror_s(buff2, errno);
+				printf("\nWARNING: unlink %s failed.\nerr=%i (%s)\n", pathToPatch1, errno, buff2);
 			}
 			if (unlinkRes2!=0) {
-				char buff[1024];
-				strerror_s(buff, errno);
-				printf("\nWARNING: unlink %s failed.\nerr=%i (%s)\n", pathToPatch2, errno, buff);
+				char buff2[1024];
+				strerror_s(buff2, errno);
+				printf("\nWARNING: unlink %s failed.\nerr=%i (%s)\n", pathToPatch2, errno, buff2);
 			}
 
 			return PC_WRITE_FILE;
@@ -216,10 +217,19 @@ int main(int argc, char **argv)
 
 	bool fullScan = argv[7][0]=='1';
 
-	unsigned short localPort;
-	localPort=atoi(argv[5]);
+	const int intLocalPort = atoi(argv[5]);
+	if ((intLocalPort < 0) || (intLocalPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Specified local port %d is outside valid bounds [0, %u]", intLocalPort, std::numeric_limits<unsigned short>::max());
+		return 2;
+	}
+	unsigned short localPort = static_cast<unsigned short>(intLocalPort);
 
-	unsigned short serverPort=atoi(argv[6]);
+	const int intServerPort = atoi(argv[6]);
+	if ((intServerPort < 0) || (intServerPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Specified server port %d is outside valid bounds [0, %u]", intServerPort, std::numeric_limits<unsigned short>::max());
+		return 3;
+	}
+	unsigned short serverPort = static_cast<unsigned short>(intServerPort);
 
 	SLNet::PacketizedTCP packetizedTCP;
 	if (packetizedTCP.Start(localPort,1)==false)
@@ -254,7 +264,8 @@ int main(int argc, char **argv)
 	bool patchImmediately=argc>=5 && argv[4][0]=='1';
 
 	SLNet::Packet *p;
-	for(;;)
+	bool running = true;
+	while(running)
 	{
 		SLNet::SystemAddress notificationAddress;
 		notificationAddress=packetizedTCP.HasCompletedConnectionAttempt();
@@ -273,12 +284,7 @@ int main(int argc, char **argv)
 		if (notificationAddress!= SLNet::UNASSIGNED_SYSTEM_ADDRESS)
 		{
 			printf("ID_CONNECTION_ATTEMPT_FAILED TCP\n");
-			autopatcherClient.SetFileListTransferPlugin(0);
-			autopatcherClient.Clear();
-			packetizedTCP.Stop();
-			rakPeer->Shutdown(500,0);
-			SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-			return 0;
+			break;
 		}
 
 
@@ -287,29 +293,21 @@ int main(int argc, char **argv)
 		{
 			if (p->data[0]==ID_AUTOPATCHER_REPOSITORY_FATAL_ERROR)
 			{
-				char buff[256];
+				char buff2[256];
 				SLNet::BitStream temp(p->data, p->length, false);
 				temp.IgnoreBits(8);
-				SLNet::StringCompressor::Instance()->DecodeString(buff, 256, &temp);
+				SLNet::StringCompressor::Instance()->DecodeString(buff2, 256, &temp);
 				printf("ID_AUTOPATCHER_REPOSITORY_FATAL_ERROR\n");
-				printf("%s\n", buff);
-				autopatcherClient.SetFileListTransferPlugin(0);
-				autopatcherClient.Clear();
-				packetizedTCP.Stop();
-				rakPeer->Shutdown(500,0);
-				SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-				return 0;
+				printf("%s\n", buff2);
+				running = false;
+				break;
 			}
 			else if (p->data[0]==ID_AUTOPATCHER_CANNOT_DOWNLOAD_ORIGINAL_UNMODIFIED_FILES)
 			{
 				printf("ID_AUTOPATCHER_CANNOT_DOWNLOAD_ORIGINAL_UNMODIFIED_FILES\n");
-				autopatcherClient.SetFileListTransferPlugin(0);
-				autopatcherClient.Clear();
-				packetizedTCP.Stop();
-				rakPeer->Shutdown(500,0);
-				SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-				return 0;
-			}			
+				running = false;
+				break;
+			}
 			else if (p->data[0]==ID_AUTOPATCHER_FINISHED)
 			{
 				printf("ID_AUTOPATCHER_FINISHED with server time %f\n", autopatcherClient.GetServerDate());
@@ -318,28 +316,23 @@ int main(int argc, char **argv)
 				fopen_s(&fp, "srvDate", "wb");
 				fwrite(&srvDate,sizeof(double),1,fp);
 				fclose(fp);
-				autopatcherClient.SetFileListTransferPlugin(0);
-				autopatcherClient.Clear();
-				packetizedTCP.Stop();
-				rakPeer->Shutdown(500,0);
-				SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-				return 0;
+				running = false;
+				break;
 			}
 			else if (p->data[0]==ID_AUTOPATCHER_RESTART_APPLICATION)
 			{
 				printf("ID_AUTOPATCHER_RESTART_APPLICATION");
-				autopatcherClient.SetFileListTransferPlugin(0);
-				autopatcherClient.Clear();
-				packetizedTCP.Stop();
-				rakPeer->Shutdown(500,0);
-				SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-				return 0;
+				running = false;
+				break;
 			}
 			// Launch \"AutopatcherClientRestarter.exe autopatcherRestart.txt\"\nQuit this application immediately after to unlock files.\n");
 
 			packetizedTCP.DeallocatePacket(p);
 			p=packetizedTCP.Receive();
 		}
+
+		if (!running)
+			break;
 
 		p=rakPeer->Receive();
 		while (p)
@@ -354,12 +347,8 @@ int main(int argc, char **argv)
 			else if (p->data[0]==ID_CONNECTION_ATTEMPT_FAILED)
 			{
 				printf("ID_CONNECTION_ATTEMPT_FAILED UDP\n");
-				autopatcherClient.SetFileListTransferPlugin(0);
-				autopatcherClient.Clear();
-				packetizedTCP.Stop();
-				rakPeer->Shutdown(500,0);
-				SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-				return 0;
+				running = false;
+				break;
 			}
 			else if (p->data[0]==ID_CLOUD_GET_RESPONSE)
 			{
@@ -438,6 +427,9 @@ int main(int argc, char **argv)
 			p=rakPeer->Receive();
 		}
 
+		if (!running)
+			break;
+
 		if (TCPServerAddress!= SLNet::UNASSIGNED_SYSTEM_ADDRESS && patchImmediately==true)
 		{
 			patchImmediately=false;
@@ -468,12 +460,7 @@ int main(int argc, char **argv)
 			else
 			{
 				printf("Failed to start patching.\n");
-				autopatcherClient.SetFileListTransferPlugin(0);
-				autopatcherClient.Clear();
-				packetizedTCP.Stop();
-				rakPeer->Shutdown(500,0);
-				SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-				return 0;
+				break;
 			}
 		}
 		RakSleep(30);
@@ -486,7 +473,7 @@ int main(int argc, char **argv)
 	packetizedTCP.Stop();
 	rakPeer->Shutdown(500,0);
 	SLNet::RakPeerInterface::DestroyInstance(rakPeer);
-	return 1;
+	return 0;
 }
 void UploadInstanceToCloud(SLNet::CloudClient *cloudClient, SLNet::RakNetGUID serverGuid)
 {

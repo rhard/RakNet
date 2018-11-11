@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -22,6 +22,7 @@
 #include "slikenet/MessageIdentifiers.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
+#include <limits> // used for std::numeric_limits
 
 using namespace SLNet;
 
@@ -42,12 +43,17 @@ int main(void)
 	Gets(listenPort,sizeof(listenPort));
 	if (listenPort[0]==0)
 		strcpy_s(listenPort, "1234");
+	const int intListenPort = atoi(listenPort);
+	if ((intListenPort < 0) || (intListenPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Specified listen port %d is outside valid bounds [0, %u]", intListenPort, std::numeric_limits<unsigned short>::max());
+		return 2;
+	}
 
 	relayPlugin->SetAcceptAddParticipantRequests(true);
 
 	// Connecting the client is very simple.  0 means we don't care about
 	// a connectionValidationInteger, and false for low priority threads
-	SLNet::SocketDescriptor socketDescriptor(atoi(listenPort),0);
+	SLNet::SocketDescriptor socketDescriptor(static_cast<unsigned short>(intListenPort),0);
 	socketDescriptor.socketFamily=AF_INET;
 	peer->Startup(8,&socketDescriptor, 1);
 	peer->SetMaximumIncomingConnections(8);
@@ -62,9 +68,13 @@ int main(void)
 		Gets(serverPort,sizeof(serverPort));
 		if (serverPort[0]==0)
 			strcpy_s(serverPort, "1234");
+		const int intServerPort = atoi(serverPort);
+		if ((intServerPort < 0) || (intServerPort > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified server port %d is outside valid bounds [0, %u]", intServerPort, std::numeric_limits<unsigned short>::max());
+			return 3;
+		}
 
-		SLNet::ConnectionAttemptResult car = peer->Connect(ip, atoi(serverPort), 0, 0);
-		RakAssert(car== SLNet::CONNECTION_ATTEMPT_STARTED);
+		SLNET_VERIFY(peer->Connect(ip, static_cast<unsigned short>(intServerPort), 0, 0) == SLNet::CONNECTION_ATTEMPT_STARTED);
 	}
 
 	peer->SetTimeoutTime(30000, UNASSIGNED_SYSTEM_ADDRESS);
@@ -85,7 +95,7 @@ int main(void)
 	{
 		if (_kbhit())
 		{
-			char ch = _getch();
+			int ch = _getch();
 			if (ch=='a' || ch=='A')
 			{
 				printf("Enter name of participant: ");
@@ -108,7 +118,6 @@ int main(void)
 			}
 			else if (ch=='p' || ch=='P')
 			{
-				char name[128];
 				printf("Enter name of participant: ");
 				Gets(name, sizeof(name));
 				if (name[0])
@@ -166,7 +175,7 @@ int main(void)
 		for (packet=peer->Receive(); packet; peer->DeallocatePacket(packet), packet=peer->Receive())
 		{
 			packet->guid.ToString(str, 64);
-			packet->systemAddress.ToString(true,str2,64);
+			packet->systemAddress.ToString(true,str2,static_cast<size_t>(64));
 			if (packet->data[0]==ID_NEW_INCOMING_CONNECTION)
 			{
 				printf("ID_NEW_INCOMING_CONNECTION from %s on %s\n", str, str2);

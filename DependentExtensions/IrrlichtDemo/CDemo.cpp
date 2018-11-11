@@ -5,7 +5,7 @@
  * This file was taken from RakNet 4.082.
  * Please see licenses/RakNet license.txt for the underlying license and related copyright.
  *
- * Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ * Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  * This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  * license found in the license.txt file in the root directory of this source tree.
@@ -114,7 +114,7 @@ void CDemo::run()
 	// Hook RakNet stuff into this class
 	playerReplica->playerName= SLNet::RakString(dest);
 	playerReplica->demo=this;
-	replicaManager3->demo=this;
+	irrlichtReplicaManager3->demo=this;
 
 	CalculateSyndeyBoundingBox();
 
@@ -167,10 +167,10 @@ void CDemo::run()
 			SLNet::RakString curMsg = GetCurrentMessage();
 			if (curMsg.IsEmpty()==false)
 			{
-				wchar_t dest[1024];
-				memset(dest,0,sizeof(dest));
-				mbstowcs_s(NULL, dest, curMsg.C_String(), curMsg.GetLength());
-				statusText->setText(dest);
+				wchar_t dest2[1024];
+				memset(dest2,0,sizeof(dest2));
+				mbstowcs_s(NULL, dest2, curMsg.C_String(), curMsg.GetLength());
+				statusText->setText(dest2);
 			}
 			else
 			{
@@ -281,7 +281,7 @@ void CDemo::switchToNextScene()
 		currentScene = 1;
 
 	scene::ISceneManager* sm = device->getSceneManager();
-	scene::ISceneNodeAnimator* sa = 0;
+	//scene::ISceneNodeAnimator* sa = 0;
 	scene::ICameraSceneNode* camera = 0;
 
 	camera = sm->getActiveCamera();
@@ -792,15 +792,6 @@ SLNet::TimeMS CDemo::shootFromOrigin(core::vector3df camPosition, core::vector3d
 		imp.outVector = out;
 		imp.pos = end;
 	}
-	else
-	{
-		// doesnt collide with wall
-		core::vector3df start = camPosition;
-		core::vector3df end = (camAt);
-		//end.normalize();
-		start += end*8.0f;
-		end = start + (end * camera->getFarValue());
-	}
 
 	// create fire ball
 	scene::ISceneNode* node = 0;
@@ -877,7 +868,7 @@ void CDemo::shoot()
 	br->position=camPosition;
 	br->shotDirection=camAt;
 	br->shotLifetime= SLNet::GetTimeMS() + shootFromOrigin(camPosition, camAt);
-	replicaManager3->Reference(br);
+	irrlichtReplicaManager3->Reference(br);
 }
 
 void CDemo::createParticleImpacts()
@@ -1040,7 +1031,7 @@ void CDemo::UpdateRakNet(void)
 				// fullyConnectedMesh2->GetParticipantList(participantList);
 
 				for (unsigned int i=0; i < systemsAccepted.Size(); i++)
-					replicaManager3->PushConnection(replicaManager3->AllocConnection(rakPeer->GetSystemAddressFromGuid(systemsAccepted[i]), systemsAccepted[i]));
+					irrlichtReplicaManager3->PushConnection(irrlichtReplicaManager3->AllocConnection(rakPeer->GetSystemAddressFromGuid(systemsAccepted[i]), systemsAccepted[i]));
 			}
 			break;
 		case ID_CONNECTION_REQUEST_ACCEPTED:
@@ -1167,8 +1158,7 @@ void CDemo::UpdateRakNet(void)
 				if (packet->data[1]==1)
 				{
 					PushMessage(SLNet::RakString("Connecting to existing game instance"));
-					SLNet::ConnectionAttemptResult car = rakPeer->Connect(packet->systemAddress.ToString(false), packet->systemAddress.GetPort(), 0, 0);
-					RakAssert(car== SLNet::CONNECTION_ATTEMPT_STARTED);
+					SLNET_VERIFY(rakPeer->Connect(packet->systemAddress.ToString(false), packet->systemAddress.GetPort(), 0, 0) == SLNet::CONNECTION_ATTEMPT_STARTED);
 				}
 			}
 			break;
@@ -1177,9 +1167,8 @@ void CDemo::UpdateRakNet(void)
 			if (packet->guid!=rakPeer->GetGuidFromSystemAddress(SLNet::UNASSIGNED_SYSTEM_ADDRESS))
 			{
 				char hostIP[32];
-				packet->systemAddress.ToString(false,hostIP,32);
-				SLNet::ConnectionAttemptResult car = rakPeer->Connect(hostIP,packet->systemAddress.GetPort(),0,0);
-				RakAssert(car== SLNet::CONNECTION_ATTEMPT_STARTED);
+				packet->systemAddress.ToString(false,hostIP,static_cast<size_t>(32));
+				SLNET_VERIFY(rakPeer->Connect(hostIP,packet->systemAddress.GetPort(),0,0) == SLNet::CONNECTION_ATTEMPT_STARTED);
 			}
 			break;
 		}
@@ -1189,8 +1178,8 @@ void CDemo::UpdateRakNet(void)
 	if (currentScene>=1)
 	{
 		unsigned int idx;
-		for (idx=0; idx < replicaManager3->GetReplicaCount(); idx++)
-			((BaseIrrlichtReplica*)(replicaManager3->GetReplicaAtIndex(idx)))->Update(curTime);;
+		for (idx=0; idx < irrlichtReplicaManager3->GetReplicaCount(); idx++)
+			((BaseIrrlichtReplica*)(irrlichtReplicaManager3->GetReplicaAtIndex(idx)))->Update(curTime);;
 	}	
 }
 

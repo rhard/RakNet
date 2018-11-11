@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -30,12 +30,12 @@
 #include <cstdio>
 #include <cstring>
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/types.h"
-#ifdef _WIN32
 #include "slikenet/Kbhit.h"
+#ifdef _WIN32
 #include "slikenet/WindowsIncludes.h" // Sleep
 #else
-#include "slikenet/Kbhit.h"
 #include <unistd.h> // usleep
 #endif
 #include "slikenet/Gets.h"
@@ -89,6 +89,11 @@ int main(void)
 	Gets(clientPort,sizeof(clientPort));
 	if (clientPort[0]==0)
 		strcpy_s(clientPort, "0");
+	const int intClientPort = atoi(clientPort);
+	if ((intClientPort < 0) || (intClientPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Specified client port %d is outside valid bounds [0, %u]", intClientPort, std::numeric_limits<unsigned short>::max());
+		return 1;
+	}
 
 	puts("Enter IP to connect to");
 	Gets(ip, sizeof(ip));
@@ -102,10 +107,15 @@ int main(void)
 	Gets(serverPort,sizeof(serverPort));
 	if (serverPort[0]==0)
 		strcpy_s(serverPort, "1234");
+	int intServerPort = atoi(serverPort);
+	if ((intServerPort < 0) || (intServerPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Specified server port %d is outside valid bounds [0, %u]", intServerPort, std::numeric_limits<unsigned short>::max());
+		return 2;
+	}
 
 	// Connecting the client is very simple.  0 means we don't care about
 	// a connectionValidationInteger, and false for low priority threads
-	SLNet::SocketDescriptor socketDescriptor(atoi(clientPort),0);
+	SLNet::SocketDescriptor socketDescriptor(static_cast<unsigned short>(intClientPort),0);
 	socketDescriptor.socketFamily=AF_INET;
 	client->Startup(8,&socketDescriptor, 1);
 	client->SetOccasionalPing(true);
@@ -117,15 +127,13 @@ int main(void)
 	fopen_s(&fp,"publicKey.dat","rb");
 	fread(public_key,sizeof(public_key),1,fp);
 	fclose(fp);
-#endif
 
-#if LIBCAT_SECURITY==1
 	SLNet::PublicKey pk;
 	pk.remoteServerPublicKey=public_key;
 	pk.publicKeyMode= SLNet::PKM_USE_KNOWN_PUBLIC_KEY;
-	bool b = client->Connect(ip, atoi(serverPort), "Rumpelstiltskin", (int) strlen("Rumpelstiltskin"), &pk)== SLNet::CONNECTION_ATTEMPT_STARTED;
+	client->Connect(ip, static_cast<unsigned short>(intServerPort), "Rumpelstiltskin", (int) strlen("Rumpelstiltskin"), &pk);
 #else
-	SLNet::ConnectionAttemptResult car = client->Connect(ip, atoi(serverPort), "Rumpelstiltskin", (int) strlen("Rumpelstiltskin"));
+	SLNet::ConnectionAttemptResult car = client->Connect(ip, static_cast<unsigned short>(intServerPort), "Rumpelstiltskin", (int) strlen("Rumpelstiltskin"));
 	RakAssert(car== SLNet::CONNECTION_ATTEMPT_STARTED);
 #endif
 
@@ -218,11 +226,16 @@ int main(void)
 				Gets(serverPort,sizeof(serverPort));
 				if (serverPort[0]==0)
 					strcpy_s(serverPort, "1234");
+				intServerPort = atoi(serverPort);
+				if ((intServerPort < 0) || (intServerPort > std::numeric_limits<unsigned short>::max())) {
+					printf("Specified server port %d is outside valid bounds [0, %u]", intServerPort, std::numeric_limits<unsigned short>::max());
+					return 2;
+				}
 
 #if LIBCAT_SECURITY==1
-				bool b = client->Connect(ip, atoi(serverPort), "Rumpelstiltskin", (int) strlen("Rumpelstiltskin"), &pk)== SLNet::CONNECTION_ATTEMPT_STARTED;
+				bool b = client->Connect(ip, static_cast<unsigned short>(intServerPort), "Rumpelstiltskin", (int) strlen("Rumpelstiltskin"), &pk)== SLNet::CONNECTION_ATTEMPT_STARTED;
 #else
-				bool b = client->Connect(ip, atoi(serverPort), "Rumpelstiltskin", (int) strlen("Rumpelstiltskin"))== SLNet::CONNECTION_ATTEMPT_STARTED;
+				bool b = client->Connect(ip, static_cast<unsigned short>(intServerPort), "Rumpelstiltskin", (int) strlen("Rumpelstiltskin"))== SLNet::CONNECTION_ATTEMPT_STARTED;
 #endif
 
 				if (b)

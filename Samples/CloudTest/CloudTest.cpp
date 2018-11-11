@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -84,29 +84,29 @@ int main(void)
 	SLNet::CloudServer cloudServer[CLOUD_SERVER_COUNT];
 	SLNet::CloudClient cloudClient[CLOUD_CLIENT_COUNT];
 	SLNet::RakPeerInterface *rakPeer[RAKPEER_COUNT];
-	for (unsigned int i=0; i < RAKPEER_COUNT; i++)
+	for (unsigned short i=0; i < RAKPEER_COUNT; i++)
 	{
 		rakPeer[i]= SLNet::RakPeerInterface::GetInstance();
 		SLNet::SocketDescriptor sd(STARTING_PORT+i,0);
 		rakPeer[i]->Startup(RAKPEER_COUNT,&sd,1);
 	}
 
-	for (unsigned int i=SERVER_1; i < RAKPEER_COUNT; i++)
+	for (unsigned short i=SERVER_1; i < RAKPEER_COUNT; i++)
 	{
 		rakPeer[i]->SetMaximumIncomingConnections(RAKPEER_COUNT);
 	}
-	for (unsigned int i=CLIENT_1, j=CLOUD_CLIENT_1; i < SERVER_1; i++, j++)
+	for (unsigned short i=CLIENT_1, j=CLOUD_CLIENT_1; i < SERVER_1; i++, j++)
 	{
 		rakPeer[i]->AttachPlugin(&cloudClient[j]);
 	}
-	for (unsigned int i=SERVER_1, j=CLOUD_SERVER_1; i < RAKPEER_COUNT; i++, j++)
+	for (unsigned short i=SERVER_1, j=CLOUD_SERVER_1; i < RAKPEER_COUNT; i++, j++)
 	{
 		rakPeer[i]->AttachPlugin(&cloudServer[j]);
 	}
 	// Connect servers to each other
-	for (unsigned int i=SERVER_1; i < RAKPEER_COUNT-1; i++)
+	for (unsigned short i=SERVER_1; i < RAKPEER_COUNT-1; i++)
 	{
-		for (unsigned int j=i+1; j < RAKPEER_COUNT; j++)
+		for (unsigned short j=i+1; j < RAKPEER_COUNT; j++)
 		{
 			rakPeer[j]->Connect("127.0.0.1", STARTING_PORT+i, 0, 0);
 		}
@@ -126,7 +126,7 @@ int main(void)
 	}
 
 	// Connect clients to servers, assume equal counts
-	for (unsigned int i=CLIENT_1; i < SERVER_1; i++)
+	for (unsigned short i=CLIENT_1; i < SERVER_1; i++)
 	{
 		rakPeer[i]->Connect("127.0.0.1", STARTING_PORT+SERVER_1+i, 0, 0);
 	}
@@ -144,7 +144,7 @@ int main(void)
 	SLNet::Packet *packet;
 	for(;;)
 	{
-		char command;
+		int command;
 		if (_kbhit())
 		{
 			command=_getch();
@@ -299,10 +299,11 @@ int main(void)
 		RakSleep(30);
 	}
 
-	for (unsigned int i=0; i < RAKPEER_COUNT; i++)
+	// #med - add proper termination handling (then reenable the following code)
+	/*for (unsigned int i=0; i < RAKPEER_COUNT; i++)
 	{
 		SLNet::RakPeerInterface::DestroyInstance(rakPeer[i]);
 	}
 
-	return 0;
+	return 0;*/
 }

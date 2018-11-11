@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2017-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -29,15 +29,11 @@
 #include <cstdio>
 #include <cstring>
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/Gets.h"
+#include "slikenet/Kbhit.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
-
-#ifdef WIN32
-#include "slikenet/Kbhit.h"
-#else
-#include "slikenet/Kbhit.h"
-#endif
 
 int main(void)
 {
@@ -46,7 +42,8 @@ int main(void)
 	SLNet::RakPeerInterface *client= SLNet::RakPeerInterface::GetInstance();
 	SLNet::RakPeerInterface *server= SLNet::RakPeerInterface::GetInstance();
 
-	int i = server->GetNumberOfAddresses();
+	// #med - review whether the call is actually required at all
+	server->GetNumberOfAddresses();
 
 	// Holds packets
 	SLNet::Packet* p;
@@ -65,6 +62,11 @@ int main(void)
 	Gets(portstring,sizeof(portstring));
 	if (portstring[0]==0)
 		strcpy_s(portstring,"60000");
+	int intServerPort = atoi(portstring);
+	if ((intServerPort < 0) || (intServerPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Specified server port %d is outside valid bounds [0, %u]", intServerPort, std::numeric_limits<unsigned short>::max());
+		return 2;
+	}
 
 	// Enumeration data
 	puts("Enter offline ping response data (for return by a LAN discovery for example)");
@@ -77,7 +79,7 @@ int main(void)
 	puts("Starting server.");
 
 	// The server has to be started to respond to pings.
-	SLNet::SocketDescriptor socketDescriptor(atoi(portstring),0);
+	SLNet::SocketDescriptor socketDescriptor(static_cast<unsigned short>(intServerPort),0);
 	bool b = server->Startup(2, &socketDescriptor, 1)== SLNet::RAKNET_STARTED;
 	server->SetMaximumIncomingConnections(2);
 	if (b)
@@ -100,7 +102,7 @@ int main(void)
 		if (_kbhit())
 		{
 			// Holds user data
-			char ip[64], serverPort[30], clientPort[30];
+			char ip[64], serverPort[30];
 
 			if (Gets(buff,sizeof(buff))&&(buff[0]=='q'))
 				break;
@@ -108,10 +110,6 @@ int main(void)
 			{
 
 				// Get our input
-				puts("Enter the client port to listen on, or 0");
-				Gets(clientPort,sizeof(clientPort));
-				if (clientPort[0]==0)
-					strcpy_s(clientPort, "0");
 				puts("Enter IP to ping");
 				Gets(ip, sizeof(ip));
 				if (ip[0]==0)
@@ -120,8 +118,13 @@ int main(void)
 				Gets(serverPort,sizeof(serverPort));
 				if (serverPort[0]==0)
 					strcpy_s(serverPort, "60000");
+				intServerPort = atoi(serverPort);
+				if ((intServerPort < 0) || (intServerPort > std::numeric_limits<unsigned short>::max())) {
+					printf("Specified server port %d is outside valid bounds [0, %u]", intServerPort, std::numeric_limits<unsigned short>::max());
+					return 2;
+				}
 
-				client->Ping(ip, atoi(serverPort), false);
+				client->Ping(ip, static_cast<unsigned short>(intServerPort), false);
 
 				puts("Pinging");
 			}

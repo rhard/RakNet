@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -346,7 +346,7 @@ int AutopatcherMySQLRepository::GetPatches(const char *applicationName, FileList
 					}
 					//sqlCommandMutex.Unlock();
 
-                    MYSQL_ROW row = mysql_fetch_row (patchResult);
+                    row = mysql_fetch_row (patchResult);
 					if (row==0)
 					{
 						// If no patch found, then this is a non-release version, or a very old version we are no longer tracking.
@@ -363,7 +363,7 @@ int AutopatcherMySQLRepository::GetPatches(const char *applicationName, FileList
 						}
 
 						MYSQL_RES * substrresult = mysql_store_result (mySqlConnection);
-						MYSQL_ROW row = mysql_fetch_row (substrresult);
+						row = mysql_fetch_row (substrresult);
 						char * file = row [0];
 						unsigned long contentLength = mysql_fetch_lengths (substrresult) [0];
 						
@@ -626,8 +626,6 @@ bool AutopatcherMySQLRepository::UpdateApplicationFiles(const char *applicationN
 		//sqlCommandMutex.Unlock();
 		
 		// Create new patches for every create version
-		MYSQL_ROW row;
-
 		while ((row = mysql_fetch_row (res)) != 0)
 		{
 			const char * fileID = row [0];
@@ -801,7 +799,7 @@ unsigned int AutopatcherMySQLRepository::GetFilePart( const char *filename, unsi
 
 	MYSQL_RES * result;
 
-	char lastError[512];
+	char error[512];
 	filePartConnectionMutex.Lock();
 	if (filePartConnection==0)
 	{
@@ -811,7 +809,8 @@ unsigned int AutopatcherMySQLRepository::GetFilePart( const char *filename, unsi
 
 	if (mysql_query(filePartConnection, query)!=0)
 	{
-		strcpy (lastError, mysql_error (filePartConnection));
+		// #med - review --- should this set the class member maybe?
+		strcpy (error, mysql_error (filePartConnection));
 	}
 	result = mysql_store_result (filePartConnection);
 

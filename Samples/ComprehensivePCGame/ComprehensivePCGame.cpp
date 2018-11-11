@@ -7,7 +7,7 @@
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
- *  Modified work: Copyright (c) 2016-2017, SLikeSoft UG (haftungsbeschränkt)
+ *  Modified work: Copyright (c) 2016-2018, SLikeSoft UG (haftungsbeschränkt)
  *
  *  This source code was modified by SLikeSoft. Modifications are licensed under the MIT-style
  *  license found in the license.txt file in the root directory of this source tree.
@@ -16,6 +16,7 @@
 #include <cstdio>
 #include <cstring>
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/GetTime.h"
 #include "slikenet/Rand.h"
 #include "slikenet/peerinterface.h"
@@ -40,7 +41,6 @@
 #include "slikenet/ReadyEvent.h"	
 #include "slikenet/PacketLogger.h"
 #include "slikenet/RPC4Plugin.h"
-#include "slikenet/Kbhit.h"
 #include "slikenet/HTTPConnection2.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
@@ -73,7 +73,7 @@ TeamManager *teamManager;
 
 // Purpose: Game object replication
 // Required?: No, but manages object replication automatically. Some form of this is required for almost every game
-ReplicaManager3 *replicaManager3;
+ReplicaManager3 *gameReplicaManager3;
 
 // Purpose: Lookup game objects given ID. Used by ReplicaManager3
 // Required?: Required to use ReplicaManager3, and some form of this is required for almost every game
@@ -300,7 +300,13 @@ public:
 				Gets(port, 256);
 				if (port[0]==0)
 					strcpy_s(port, DEFAULT_SERVER_PORT);
-				ConnectionAttemptResult car = rakPeer->Connect(serverIPAddr, atoi(port), 0, 0);
+				const int intServerPort = atoi(port);
+				if ((intServerPort < 0) || (intServerPort > std::numeric_limits<unsigned short>::max())) {
+					printf("Specified server port %d is outside valid bounds [0, %u]", intServerPort, std::numeric_limits<unsigned short>::max());
+					phase = EXIT_SAMPLE;
+					break;
+				}
+				ConnectionAttemptResult car = rakPeer->Connect(serverIPAddr, static_cast<unsigned short>(intServerPort), 0, 0);
 				if (car!= SLNet::CONNECTION_ATTEMPT_STARTED)
 				{
 					printf("Failed connect call to %s. Code=%i\n", serverIPAddr, car);
@@ -662,7 +668,7 @@ public:
 	{
 		// unused parameters
 		(void)serializeParameters;
-		
+
 		return RM3SR_BROADCAST_IDENTICALLY;
 	}
 	virtual void Deserialize(SLNet::DeserializeParameters *deserializeParameters)
@@ -761,9 +767,9 @@ void SerializeToJSON(RakString &outputString, RakString &roomName, DataStructure
 // This operation happens after FullyConnectedMesh2 has told us about who the host is.
 void RegisterGameParticipant(RakNetGUID guid)
 {
-	Connection_RM3 *connection = replicaManager3->AllocConnection(rakPeer->GetSystemAddressFromGuid(guid), guid);
-	if (replicaManager3->PushConnection(connection)==false)
-		replicaManager3->DeallocConnection(connection);
+	Connection_RM3 *connection = gameReplicaManager3->AllocConnection(rakPeer->GetSystemAddressFromGuid(guid), guid);
+	if (gameReplicaManager3->PushConnection(connection)==false)
+		gameReplicaManager3->DeallocConnection(connection);
 	teamManager->GetWorldAtIndex(0)->AddParticipant(guid);
 	readyEvent->AddToWaitList(0, guid);
 }
@@ -865,9 +871,7 @@ RAK_THREAD_DECLARATION(UPNPOpenWorker)
 
 	// Behind a NAT. Try to open with UPNP to avoid doing NAT punchthrough
 	struct UPNPDev * devlist = 0;
-	SLNet::Time t1 = GetTime();
 	devlist = upnpDiscover(args->timeout, 0, 0, 0, 0, 0);
-	SLNet::Time t2 = GetTime();
 	if (devlist)
 	{
 		if (args->progressCallback)
@@ -1009,7 +1013,7 @@ int main(void)
 #endif
 	rpc4 = RPC4::GetInstance();
 	readyEvent = ReadyEvent::GetInstance();
-	replicaManager3=new SampleRM3;
+	gameReplicaManager3=new SampleRM3;
 	httpConnection2 = HTTPConnection2::GetInstance();
 
 	// ---------------------------------------------------------------------------------------------------------------------
@@ -1023,7 +1027,7 @@ int main(void)
 #endif
 	rakPeer->AttachPlugin(rpc4);
 	rakPeer->AttachPlugin(readyEvent);
-	rakPeer->AttachPlugin(replicaManager3);
+	rakPeer->AttachPlugin(gameReplicaManager3);
 	/// TCPInterface supports plugins too
 	tcp->AttachPlugin(httpConnection2);
 
@@ -1039,15 +1043,15 @@ int main(void)
 	fullyConnectedMesh2->SetAutoparticipateConnections(false);	
 		
 	// Tell ReplicaManager3 which networkIDManager to use for object lookup, used for automatic serialization
-	replicaManager3->SetNetworkIDManager(networkIDManager);
+	gameReplicaManager3->SetNetworkIDManager(networkIDManager);
 	// Do not automatically count new connections, but do drop lost connections automatically
-	replicaManager3->SetAutoManageConnections(false,true);
+	gameReplicaManager3->SetAutoManageConnections(false,true);
 	
 	// Reference static game objects that always exist
 	game = new Game;
 	game->SetNetworkIDManager(networkIDManager);
 	game->SetNetworkID(0);
-	replicaManager3->Reference(game);
+	gameReplicaManager3->Reference(game);
 
 	// Setup my own user
 	User *user = new User;
@@ -1062,8 +1066,7 @@ int main(void)
 	SLNet::SocketDescriptor sd;
 	sd.socketFamily=AF_INET; // Only IPV4 supports broadcast on 255.255.255.255
 	sd.port=0;
-	StartupResult sr = rakPeer->Startup(8,&sd,1);
-	RakAssert(sr==RAKNET_STARTED);
+	SLNET_VERIFY(rakPeer->Startup(8, &sd, 1) == RAKNET_STARTED);
 	rakPeer->SetMaximumIncomingConnections(8);
 	rakPeer->SetTimeoutTime(30000, SLNet::UNASSIGNED_SYSTEM_ADDRESS);
 	printf("Our guid is %s\n", rakPeer->GetGuidFromSystemAddress(SLNet::UNASSIGNED_SYSTEM_ADDRESS).ToString());
@@ -1078,7 +1081,7 @@ int main(void)
 	// ---------------------------------------------------------------------------------------------------------------------
 	// Read packets loop
 	// ---------------------------------------------------------------------------------------------------------------------
-	char ch;
+	int ch;
 	Packet *packet;
 	while (game->phase!=Game::EXIT_SAMPLE)
 	{
@@ -1215,12 +1218,12 @@ int main(void)
 						{
 							// As host, reference the teams we created
 							for (unsigned int i=0; i < game->teams.Size(); i++)
-								replicaManager3->Reference(game->teams[i]);
+								gameReplicaManager3->Reference(game->teams[i]);
 						}
 
 						// Reference the user we created (host or not)
 						for (unsigned int i=0; i < game->users.Size(); i++)
-							replicaManager3->Reference(game->users[i]);
+							gameReplicaManager3->Reference(game->users[i]);
 					}
 				}
 				break;
@@ -1427,7 +1430,7 @@ int main(void)
 
 			case ID_REPLICA_MANAGER_DOWNLOAD_COMPLETE:
 				{
-					if (replicaManager3->GetAllConnectionDownloadsCompleted()==true)
+					if (gameReplicaManager3->GetAllConnectionDownloadsCompleted()==true)
 					{
 						printf("Completed all remote downloads\n");
 
@@ -1696,8 +1699,8 @@ int main(void)
 					// Clear out state data from plugins
 					fullyConnectedMesh2->Clear();
 					readyEvent->DeleteEvent(0);
-					replicaManager3->Clear(false);
-					replicaManager3->Reference(game);
+					gameReplicaManager3->Clear(false);
+					gameReplicaManager3->Reference(game);
 
 					game->Reset();
 					game->EnterPhase(Game::SEARCH_FOR_GAMES);
@@ -1745,7 +1748,7 @@ int main(void)
 	NatTypeDetectionClient::DestroyInstance(natTypeDetectionClient);
 	RPC4::DestroyInstance(rpc4);
 	ReadyEvent::DestroyInstance(readyEvent);
-	delete replicaManager3;
+	delete gameReplicaManager3;
 	NetworkIDManager::DestroyInstance(networkIDManager);
 	HTTPConnection2::DestroyInstance(httpConnection2);
 

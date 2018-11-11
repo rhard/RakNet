@@ -19,6 +19,7 @@
 #include "slikenet/Kbhit.h"
 #include <string.h>
 #include <stdlib.h>
+#include <limits> // used for std::numeric_limits
 #include "slikenet/sleep.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/MessageIdentifiers.h"
@@ -37,9 +38,7 @@ void CFunc1(SLNet::BitStream *bitStream, Packet *packet )
 
 	printf("CFunc1 ");
 	SLNet::RakString data;
-	int offset=bitStream->GetReadOffset();
-	bool read = bitStream->ReadCompressed(data);
-	RakAssert(read);
+	SLNET_VERIFY(bitStream->ReadCompressed(data));
 	printf("%s\n", data.C_String());
 };
 
@@ -50,9 +49,7 @@ void CFunc2(SLNet::BitStream *bitStream, Packet *packet )
 
 	printf("CFunc2 ");
 	SLNet::RakString data;
-	int offset=bitStream->GetReadOffset();
-	bool read = bitStream->ReadCompressed(data);
-	RakAssert(read);
+	SLNET_VERIFY(bitStream->ReadCompressed(data));
 	printf("%s\n", data.C_String());
 };
 
@@ -63,9 +60,7 @@ void CFunc3(SLNet::BitStream *bitStream, SLNet::BitStream *returnData, Packet *p
 
 	printf("CFunc3 ");
 	SLNet::RakString data;
-	int offset=bitStream->GetReadOffset();
-	bool read = bitStream->ReadCompressed(data);
-	RakAssert(read);
+	SLNET_VERIFY(bitStream->ReadCompressed(data));
 	printf("%s\n", data.C_String());
 	returnData->WriteCompressed("CFunc3 returnData");
 };
@@ -85,8 +80,13 @@ int main(void)
 	Gets(clientPort,sizeof(clientPort));
 	if (clientPort[0]==0)
 		strcpy_s(clientPort, "0");
-	
-	SLNet::SocketDescriptor sd1(atoi(clientPort),0);
+	const int intClientPort = atoi(clientPort);
+	if ((intClientPort < 0) || (intClientPort > std::numeric_limits<unsigned short>::max())) {
+		printf("Specified client port %d is outside valid bounds [0, %u]", intClientPort, std::numeric_limits<unsigned short>::max());
+		return 2;
+	}
+
+	SLNet::SocketDescriptor sd1(static_cast<unsigned short>(intClientPort),0);
 	rakPeer->Startup(8,&sd1,1);
 	rakPeer->SetMaximumIncomingConnections(8);
 
@@ -105,7 +105,12 @@ int main(void)
 	{
 		puts("Enter the port to connect to");
 		Gets(serverPort,sizeof(serverPort));
-		rakPeer->Connect(ip, atoi(serverPort), 0, 0);
+		const int intServerPort = atoi(serverPort);
+		if ((intServerPort < 0) || (intServerPort > std::numeric_limits<unsigned short>::max())) {
+			printf("Specified server port %d is outside valid bounds [0, %u]", intServerPort, std::numeric_limits<unsigned short>::max());
+			return 3;
+		}
+		rakPeer->Connect(ip, static_cast<unsigned short>(intServerPort), 0, 0);
 
 		RakSleep(1000);
 
@@ -125,7 +130,7 @@ int main(void)
 		rpc.CallBlocking("Blocking", &testBs, HIGH_PRIORITY,RELIABLE_ORDERED,0,rakPeer->GetSystemAddressFromIndex(0),&testBlockingReturn);
 
 		SLNet::RakString data;
-		bool read = testBlockingReturn.ReadCompressed(data);
+		testBlockingReturn.ReadCompressed(data);
 		printf("%s\n", data.C_String());
 	}
 	else
